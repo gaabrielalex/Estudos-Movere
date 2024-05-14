@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TreinamentoMovere-C#\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29D349C5-60D7-4866-8C09-2BDC2E5DA4CC}|TestesUnit\u00E1rios0905\\TestesUnit\u00E1rios0905.csproj|c:\\users\\gabrielsilva\\desktop\\c#\u0026vb\\treinamentomovere-c#\\testesunit\u00E1rios0905\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D349C5-60D7-4866-8C09-2BDC2E5DA4CC}|TestesUnit\u00E1rios0905\\TestesUnit\u00E1rios0905.csproj|solutionrelative:testesunit\u00E1rios0905\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{359B201F-9B0B-4C9F-9AA8-4E45A65E1780}|..\\TerianmentoMovere-VB\\Teste0905\\Teste0905.csproj|c:\\users\\gabrielsilva\\desktop\\c#\u0026vb\\terianmentomovere-vb\\teste0905\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E5170F1-DAC2-460A-A3B9-97071AFDC796}|Atividade-01\\Atividade-01.csproj|c:\\users\\gabrielsilva\\desktop\\c#\u0026vb\\treinamentomovere-c#\\atividade-01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E5170F1-DAC2-460A-A3B9-97071AFDC796}|Atividade-01\\Atividade-01.csproj|solutionrelative:atividade-01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TreinamentoMovere-C#\\TestesUnit\u00E1rios0905\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "TestesUnit\u00E1rios0905\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TreinamentoMovere-C#\\TestesUnit\u00E1rios0905\\UnitTest1.cs",
+              "RelativeToolTip": "TestesUnit\u00E1rios0905\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T14:02:19.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TerianmentoMovere-VB\\Teste0905\\Program.cs",
+              "RelativeDocumentMoniker": "..\\TerianmentoMovere-VB\\Teste0905\\Program.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TerianmentoMovere-VB\\Teste0905\\Program.cs",
+              "RelativeToolTip": "..\\TerianmentoMovere-VB\\Teste0905\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T13:59:47.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TreinamentoMovere-C#\\Atividade-01\\Program.cs",
+              "RelativeDocumentMoniker": "Atividade-01\\Program.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TreinamentoMovere-C#\\Atividade-01\\Program.cs",
+              "RelativeToolTip": "Atividade-01\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T15:41:39.442Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

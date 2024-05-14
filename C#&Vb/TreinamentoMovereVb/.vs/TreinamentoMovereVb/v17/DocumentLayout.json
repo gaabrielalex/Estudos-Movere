@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TerianmentoMovere-VB\\TreinamentoMovereVb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C56EDEA-7F8E-4808-9F97-9EBD1578614C}|Teste01\\Teste01.vbproj|c:\\users\\gabrielsilva\\desktop\\c#\u0026vb\\terianmentomovere-vb\\treinamentomoverevb\\teste01\\module1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0C56EDEA-7F8E-4808-9F97-9EBD1578614C}|Teste01\\Teste01.vbproj|solutionrelative:teste01\\module1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Module1.vb",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TerianmentoMovere-VB\\TreinamentoMovereVb\\Teste01\\Module1.vb",
+              "RelativeDocumentMoniker": "Teste01\\Module1.vb",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\C#\u0026Vb\\TerianmentoMovere-VB\\TreinamentoMovereVb\\Teste01\\Module1.vb",
+              "RelativeToolTip": "Teste01\\Module1.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-09T12:27:14.409Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
