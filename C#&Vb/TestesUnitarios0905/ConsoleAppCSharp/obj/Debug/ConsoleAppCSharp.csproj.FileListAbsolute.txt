@@ -1,7 +1,0 @@
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\bin\Debug\ConsoleAppCSharp.exe.config
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\bin\Debug\ConsoleAppCSharp.exe
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\bin\Debug\ConsoleAppCSharp.pdb
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\obj\Debug\ConsoleAppCSharp.csproj.AssemblyReference.cache
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\obj\Debug\ConsoleAppCSharp.csproj.CoreCompileInputs.cache
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\obj\Debug\ConsoleAppCSharp.exe
-C:\Users\GabrielSilva\Desktop\C#&Vb\TestesUnitarios0905\ConsoleAppCSharp\obj\Debug\ConsoleAppCSharp.pdb
