@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using FluentAssertions;
 
 namespace ConsoleAppCSharpTests
 {
@@ -134,25 +135,52 @@ namespace ConsoleAppCSharpTests
 			var parcelas = 3;
 
 			//Act
-			var simulacao = calculadora.CalcularSimulacaoDeFinanciamento(valorFinanciamento, taxa, parcelas);
+			var dataBase = new DateTime(day: 21, month: 5, year: 2024);
+			var simulacao = calculadora.CalcularSimulacaoDeFinanciamento(valorFinanciamento, taxa, parcelas, dataBase);
 
 			//Assert
-			if (simulacao.Count != 3)
-				throw new Exception("Não foi calculado a quantidade correta de parcelas!");
+			simulacao.Count
+				.Should()
+				.Be(3, because: "Não foi calculado a quantidade correta de parcelas!");
 
-			var valoreEsperados = new decimal[] { 570.73M, 579.3M, 587.98M };
+			var valoreEsperados = new decimal[] { 570.73M, 579.3M, 587.97M };
+
+			var primeiroVencimento = new DateTime(day: 20, month: 6, year: 2024);
+			var segundooVencimento = new DateTime(day: 20, month: 7, year: 2024);
+			var terceiroVencimento = new DateTime(day: 19, month: 8, year: 2024);
+
+			var vencimentosEsperados = new DateTime[] {primeiroVencimento, segundooVencimento, terceiroVencimento };
 
 
 			for (int parcela = 1; parcela <= 3; parcela++) {
-				if (simulacao[parcela - 1].Quantidade != parcela)
-					throw new Exception("A quantidade de parcelas da parcela [" +
-						parcelas.ToString() + "] está errada");
+				simulacao[parcela - 1].Quantidade
+					.Should()
+					.Be(parcela, because: "A quantidade de parcelas está errada!");
 
-				if (simulacao[parcela - 1].ValorTotal != valoreEsperados[parcela - 1]) {
-							throw new Exception("O valor da parcela[[" + parcela.ToString() + "] está errado!" +
-							$"Esperacvamos {valoreEsperados[parcela - 1]}, porém, está calculando {simulacao[parcela - 1].ValorTotal}.");
+				//if (simulacao[parcela - 1].Quantidade != parcela)
+				//	throw new Exception("A quantidade de parcelas da parcela [" +
+				//		parcelas.ToString() + "] está errada");
 
-				}
+				simulacao[parcela - 1].ValorTotal
+					.Should()
+					.Be(valoreEsperados[parcela - 1]);
+
+				//if (simulacao[parcela - 1].ValorTotal != valoreEsperados[parcela - 1]) {
+				//			throw new Exception("O valor da parcela[[" + parcela.ToString() + "] está errado!" +
+				//			$"Esperacvamos {valoreEsperados[parcela - 1]}, porém, está calculando {simulacao[parcela - 1].ValorTotal}.");
+
+				//}
+
+				simulacao[parcela - 1].Vencimento
+					.Should()
+					.Be(vencimentosEsperados[parcela - 1]);
+
+				//if (simulacao[parcela - 1].Vencimento != vencimentosEsperados[parcela - 1])
+				//{
+				//	throw new Exception("O vencimento da parcela[[" + parcela.ToString() + "] está errado!" +
+				//	$"Esperacvamos {vencimentosEsperados[parcela - 1]}, porém, está calculando {simulacao[parcela - 1].Vencimento}.");
+
+				//}
 			}
 
 		}

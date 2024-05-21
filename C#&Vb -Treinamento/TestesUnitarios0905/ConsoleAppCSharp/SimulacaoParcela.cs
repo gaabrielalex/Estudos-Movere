@@ -5,8 +5,9 @@ namespace ConsoleAppCSharp
 	public class SimulacaoParcela
 	{	
 		public int Quantidade {  get;}
-		public decimal ValorInicial {  get;}
-		public decimal ValorTotal { get;}
+		public decimal ValorTotal { 
+			get { return ValorDaParcela * Quantidade; }
+		}
 		public decimal ValorDaParcela { 
 			get;
 			private set;
@@ -14,24 +15,17 @@ namespace ConsoleAppCSharp
 
 		public decimal ValorJuros{  
 			get;
-			private set;
 		}
 
-		public SimulacaoParcela(decimal valorIncial, int quantidade, decimal valorTotal)
+		public DateTime Vencimento { get;}
+
+		public SimulacaoParcela(int quantidade, decimal valorParcela, decimal totalJuros, DateTime vencimento)
 		{	
-			ValorInicial = valorIncial;
 			Quantidade = quantidade;
-			ValorTotal = valorTotal;
-			CalcularValorDaParcela();
-			CalcularJuros();
+			ValorDaParcela = valorParcela;
+			ValorJuros = totalJuros;
+			Vencimento = vencimento;
 		}
 
-		public void CalcularValorDaParcela() {
-			ValorDaParcela = ValorTotal / Quantidade;	
-		}
-
-		public void CalcularJuros() {
-			ValorJuros = ValorTotal - ValorInicial;
-		}
 	}
 }

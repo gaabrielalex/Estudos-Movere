@@ -34,3 +34,10 @@ C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\obj\Debug\ConsoleA.6E93AED9.Up2Date
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\FluentAssertions.dll
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\FluentAssertions.pdb
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\FluentAssertions.xml
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Threading.Tasks.Extensions.xml

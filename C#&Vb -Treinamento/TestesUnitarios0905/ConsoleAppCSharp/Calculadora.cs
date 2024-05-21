@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,18 +89,33 @@ namespace ConsoleAppCSharp
 		}
 
 		//TUPLAS NO C#: (tipo do dado, tipo do dado)
-		public List<SimulacaoParcela> CalcularSimulacaoDeFinanciamento(decimal valorFinanciamento, decimal taxa, int parcelas) 
+		public List<SimulacaoParcela> CalcularSimulacaoDeFinanciamento(decimal valorFinanciamento, decimal taxa, int parcelas, DateTime dataBase) 
 		{
 			var lista = new List<SimulacaoParcela>();
+			//var vencimento = DateTime.Now.Date;
+			var vencimento = dataBase;
 
+			//Valor financianeto é o valor inicial
 			for(int parcela = 0; parcela < parcelas; parcela++) {
 				var meses = parcela + 1;
 				var valorTotal = this.CalcularValorMontanteComJurosCompostos(valorFinanciamento, taxa, meses);
-				var financiamento = new SimulacaoParcela(valorFinanciamento, meses, valorTotal);
+				var valorParcela = Math.Round(valorTotal / meses, decimals: 2);
+				var totalJuros = (valorParcela * meses) - valorFinanciamento;
+
+				//Adciona 30 dias / 1 mes no vencimento
+				vencimento = vencimento.AddDays(30);
+				
+				var financiamento = new SimulacaoParcela(meses, valorParcela, totalJuros, vencimento);
 				lista.Add(financiamento);
 			}
 
 			return lista;
 		}
+
+		public List<SimulacaoParcela> CalcularSimulacaoDeFinanciamento(decimal valorFinanciamento, decimal taxa, int parcelas)
+		{
+			return CalcularSimulacaoDeFinanciamento(valorFinanciamento, taxa, parcelas, dataBase: DateTime.Now.Date);
+		}
+
 	}
 }

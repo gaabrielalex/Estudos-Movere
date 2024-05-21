@@ -152,7 +152,7 @@ namespace ConsoleAppCSharp
 			Console.WriteLine("\n\n-------------- Financiamentos --------------\n");
 			foreach(SimulacaoParcela simulacaoParcela in resultados)
 			{
-				Console.WriteLine($"{simulacaoParcela.Quantidade} X R$ {Math.Round(simulacaoParcela.ValorDaParcela, decimals: 2)} = R$ {Math.Round(simulacaoParcela.ValorTotal, decimals: 2)} [Total de Juros: R$ {Math.Round(simulacaoParcela.ValorJuros, decimals: 2)}]");
+				Console.WriteLine($"{simulacaoParcela.Quantidade} X R$ {Math.Round(simulacaoParcela.ValorDaParcela, decimals: 2)} = R$ {Math.Round(simulacaoParcela.ValorTotal, decimals: 2)} [Total de Juros: R$ {Math.Round(simulacaoParcela.ValorJuros, decimals: 2)}] [{simulacaoParcela.Vencimento.ToString("dd/MM/yyyy")}]");
 			}
 		}
 	}
