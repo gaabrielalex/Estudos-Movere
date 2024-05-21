@@ -117,5 +117,21 @@ namespace ConsoleAppCSharp
 			return CalcularSimulacaoDeFinanciamento(valorFinanciamento, taxa, parcelas, dataBase: DateTime.Now.Date);
 		}
 
+		public List<int> CalcularSequenciaFibonacciAteN(int n)
+		{
+			var sequencia = new List<int>();
+			sequencia.Add(0);
+			sequencia.Add(1);
+
+			for (int i = 2; i < n; i++)
+			{
+				var novoValor = sequencia[i - 1] + sequencia[i - 2];
+				sequencia.Add(novoValor);
+			}
+
+			return sequencia;
+		}
+
+
 	}
 }

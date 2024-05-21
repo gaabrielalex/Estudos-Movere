@@ -184,5 +184,28 @@ namespace ConsoleAppCSharpTests
 			}
 
 		}
+
+		[TestMethod]
+		public void AoCalcularSequenciaDeFibonnaciAte8TermoDeveRetornarValoresEsperados()
+		{
+			//Arrange
+			var calculadora = new Calculadora();
+
+			//Act
+			var sequencia = calculadora.CalcularSequenciaFibonacciAteN(8);
+
+			//Assert
+			sequencia.Count
+				.Should()
+				.Be(8, because: "A sequência de Fibonacci deveria ter 8 termos!");
+
+			var valoresEsperados = new int[] {0,1, 1, 2, 3, 5, 8, 13 };
+
+			for (int termo = 1; termo <= 8; termo++) {
+				sequencia[termo - 1]
+					.Should()
+					.Be(valoresEsperados[termo - 1], because: "O valor do termo está errado!");
+			}
+		}
 	}
 }

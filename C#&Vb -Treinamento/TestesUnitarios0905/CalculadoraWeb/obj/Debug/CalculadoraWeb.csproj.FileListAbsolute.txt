@@ -71,3 +71,6 @@ C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\obj\Debug\Calculad.787B48E3.Up2Date
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\obj\Debug\CalculadoraWeb.dll
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\obj\Debug\CalculadoraWeb.pdb
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\bin\ConsoleAppCSharp.exe
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\bin\ConsoleAppCSharp.pdb
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\CalculadoraWeb\bin\ConsoleAppCSharp.exe.config
