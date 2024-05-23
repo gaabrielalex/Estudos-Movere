@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|c:\\users\\gabrielsilva\\desktop\\estudos-movere\\c#\u0026vb -treinamento\\testesunitarios0905\\calculadoraweb\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\calculadoraweb\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|c:\\users\\gabrielsilva\\desktop\\estudos-movere\\c#\u0026vb -treinamento\\testesunitarios0905\\calculadoraweb\\about.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\about.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\consoleappcsharp\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|solutionrelative:consoleappcsharp\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D18FBA01-8262-4A94-8DA5-DC2103F8CAF0}|ConsoleAppCSharpTests\\ConsoleAppCSharpTests.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\consoleappcsharptests\\calculadoratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D18FBA01-8262-4A94-8DA5-DC2103F8CAF0}|ConsoleAppCSharpTests\\ConsoleAppCSharpTests.csproj|solutionrelative:consoleappcsharptests\\calculadoratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\consoleappcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|solutionrelative:consoleappcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\consoleappcsharp\\simulacaoparcela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|solutionrelative:consoleappcsharp\\simulacaoparcela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\consoleappcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1429659-E899-473A-83AB-7C0CF7217BFA}|ConsoleAppCSharp\\ConsoleAppCSharp.csproj|solutionrelative:consoleappcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D18FBA01-8262-4A94-8DA5-DC2103F8CAF0}|ConsoleAppCSharpTests\\ConsoleAppCSharpTests.csproj|c:\\users\\gabrielsilva\\desktop\\estudos-movere\\c#\u0026vb -treinamento\\testesunitarios0905\\consoleappcsharptests\\calculadoratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D18FBA01-8262-4A94-8DA5-DC2103F8CAF0}|ConsoleAppCSharpTests\\ConsoleAppCSharpTests.csproj|solutionrelative:consoleappcsharptests\\calculadoratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +34,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "About.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\About.aspx.cs",
+              "RelativeDocumentMoniker": "CalculadoraWeb\\About.aspx.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\About.aspx.cs",
+              "RelativeToolTip": "CalculadoraWeb\\About.aspx.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAA2wG8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T14:01:17.475Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -47,43 +72,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Calculadora.cs",
               "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharp\\Calculadora.cs",
               "RelativeDocumentMoniker": "ConsoleAppCSharp\\Calculadora.cs",
               "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharp\\Calculadora.cs",
               "RelativeToolTip": "ConsoleAppCSharp\\Calculadora.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAmwHoAAAADAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowIQAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T14:16:31.821Z"
+              "WhenOpened": "2024-05-09T14:16:31.821Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CalculadoraTest.cs",
               "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharpTests\\CalculadoraTest.cs",
               "RelativeDocumentMoniker": "ConsoleAppCSharpTests\\CalculadoraTest.cs",
               "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharpTests\\CalculadoraTest.cs",
               "RelativeToolTip": "ConsoleAppCSharpTests\\CalculadoraTest.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAAAQwMkAAAAnAAAA",
+              "ViewState": "AQIAALcAAAAAAAAAAAAmwMkAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T13:07:45.154Z"
+              "WhenOpened": "2024-05-16T13:07:45.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SimulacaoParcela.cs",
               "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharp\\SimulacaoParcela.cs",
               "RelativeDocumentMoniker": "ConsoleAppCSharp\\SimulacaoParcela.cs",
               "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharp\\SimulacaoParcela.cs",
               "RelativeToolTip": "ConsoleAppCSharp\\SimulacaoParcela.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T12:54:13.608Z"
+              "WhenOpened": "2024-05-16T12:54:13.608Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\ConsoleAppCSharp\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleAppCSharp\\Program.cs",
@@ -91,7 +119,8 @@
               "RelativeToolTip": "ConsoleAppCSharp\\Program.cs",
               "ViewState": "AQIAAHQAAAAAAAAAAAAwwIUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T14:08:21.243Z"
+              "WhenOpened": "2024-05-09T14:08:21.243Z",
+              "EditorCaption": ""
             }
           ]
         }

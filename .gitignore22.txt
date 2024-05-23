@@ -1,2 +1,0 @@
-.vs
-C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\.vs

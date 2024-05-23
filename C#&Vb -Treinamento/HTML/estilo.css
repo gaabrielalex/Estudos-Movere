@@ -1,0 +1,23 @@
+p {
+	font-weight: bold;
+}
+
+.tamanho-20 {
+	font-size: 20px;
+}
+
+.azul {
+	color: blue;
+}
+
+.azul:hover {
+	font-size: 40px;
+}
+
+.azul.tamanho-20 {
+	border: 1px solid red;
+}
+
+#p2 {
+	color: red;
+}

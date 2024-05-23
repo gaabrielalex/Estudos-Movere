@@ -199,7 +199,7 @@ namespace ConsoleAppCSharpTests
 				.Should()
 				.Be(8, because: "A sequência de Fibonacci deveria ter 8 termos!");
 
-			var valoresEsperados = new int[] {0,1, 1, 2, 3, 5, 8, 13 };
+			var valoresEsperados = new int[] {0, 1, 1, 2, 3, 5, 8, 13 };
 
 			for (int termo = 1; termo <= 8; termo++) {
 				sequencia[termo - 1]
