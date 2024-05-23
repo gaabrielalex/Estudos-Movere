@@ -1,4 +1,5 @@
-﻿using ConsoleAppCSharp;
+﻿using CalculadoraWeb.util;
+using ConsoleAppCSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace CalculadoraWeb
 				//Para resolver fazemos assim, se é a primeira vez a visita é 1
 				QuantidadeDeCliques = 0;
 				QuantidadeDeAlteracoes = 0;
+				ResultadoJurosLabel.Text = "";
 			} else {
 				//Se não é a primeira vez, então vc vai pegar informação da quantidade de cliques atrvaés de u compnente que gerenciou o estado
 				//ou sej, ao dar reload o estado desse componente des=te será mantido, para que o asp net consiga saber como esse componnte estava antes da requisiçãpo
@@ -46,8 +48,12 @@ namespace CalculadoraWeb
 				//Daí como o componente do asp tem gerciamenoto de estaod então vc pode utilizar esse para guardar a informação de quantidade de visitas
 				// Do contraario nvc pode forçar esse gerenciamnrtonde estaod em envaroavesies e atribbutos para isso só aplicar iguakl foi aplicado no quantidade aletações(atributo lá em cima)
 				QuantidadeDeCliques = int.Parse(VisitalLabel.Text);
+				//if(int.TryParse(VisitalLabel.Text, out int qtde))
+				//{
+				//	QuantidadeDeCliques = qtde;
+				//}
 			}
-				QuantidadeDeCliques += 1;
+			QuantidadeDeCliques += 1;
 				VisitalLabel.Text = QuantidadeDeCliques.ToString();
 
 		}
@@ -118,5 +124,21 @@ namespace CalculadoraWeb
 			FibonacciPanel.Visible = false;
 			CalcularJurosPanel.Visible = true;
 		}
-	}
+
+        protected void CalcularJurosButton_Click(object sender, EventArgs e)
+        {
+			if(ParcelaTBox.Text == "" || TaxaTBox.Text == "" || MesesTBox.Text == "" ) {
+				ResultadoJurosLabel.Text = "Por favor, preencha todos os campos";
+			} else if(decimal.TryParse(ParcelaTBox.Text, out decimal parcela) && decimal.TryParse(TaxaTBox.Text, out decimal taxa) && int.TryParse(MesesTBox.Text, out int meses)) {
+				var calculadora = new Calculadora();
+				var resultado = calculadora.CalcularValorMontanteComJurosCompostos(parcela, taxa, meses);
+
+				ResultadoJurosLabel.Text = resultado.ToString();
+			} else {
+				ResultadoJurosLabel.Text = "Por favor, insira valores númericos";
+			}
+
+
+		}
+    }
 }

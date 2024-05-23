@@ -2,37 +2,37 @@
 
 <%--<%@ Import Namespace="ConsoleAppCSharp" %>--%> 
 
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <style>
+
+        .divBtnCalcular {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .conteudoJuros {
+            display: inline-flex;
+            flex-direction: column;
+
+        }
+
+        .conteudoJuros tr {
+           height: 50px;
+        }
+
+        .conteudoJuros td {
+           width: 70px;
+        }
+
+        .divResultado{
+            margin-top: 25px;
+        }
+    </style>
+</asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
-        <%--<h2 id="title"><%: Title %>.</h2>
-        <h3>Your application description page.</h3>
-        <p>Use this area to provide additional information.</p>
-
-        <P>
-            Seja <b>bem vindo</b>
-            <ul>
-               
-
-                 <% 
-
-                     //var calculadora = new CalculadoraWeb.CalculadoraCopiaWeb();
-                     //List<int> sequenciaFibo = calculadora.CalcularSequenciaFibonacciAteN(10);
-
-                    
-
-                     GerarNumerosFibonaci().ForEach((termo) =>
-                     {
-                        %>
-                        <li>
-                        <%=(termo)%>
-                        </li>
-                        <%
-                     });
-
-                 %>
-
-            </ul>
-        </P>--%>
 
         <div>
 			<asp:Button runat="server" Text="Calcular Fibonacci" OnClick="Unnamed_Click" />
@@ -72,7 +72,35 @@
         <asp:Panel runat="server" ID="CalcularJurosPanel" Visible="false">
 
             <h1> Calculadora de Juros</h1>
-        </asp:Panel>
 
+            Favor preencher os campos para que seja realizado o calculo do montante com juros compostos:
+
+            <br />
+			<br />
+            <div class="conteudoJuros">
+                <table>
+                    <tr>
+                        <td><asp:Label runat="server" ID="ParcelaLabel" Text="Parcela:" /></td>
+                        <td><asp:TextBox runat="server" ID="ParcelaTBox" /></td>
+                    </tr>
+                    <tr>
+                        <td><asp:Label runat="server" ID="TaxaLabel" Text="Taxa:" /></td>
+                        <td><asp:TextBox runat="server" ID="TaxaTBox" /></td>
+                    </tr>
+                    <tr>
+                        <td><asp:Label runat="server" ID="MesesLabel" Text="Meses:" /></td>
+                        <td><asp:TextBox runat="server" ID="MesesTBox" /></td>
+                    </tr>
+                </table>
+                <div class="divBtnCalcular">
+                    <asp:Button runat="server" ID="CalcularJurosButton" Text="Calcular" OnClick="CalcularJurosButton_Click" />
+                </div>
+                <div class="divResultado">
+                    Resultado: <asp:Label ID="ResultadoJurosLabel" runat="server" Text="Text"></asp:Label>
+                </div>
+            </div>
+
+
+        </asp:Panel>
     </main>
 </asp:Content>
