@@ -11,61 +11,61 @@ namespace CalculadoraWeb
 {
 
 
-	public partial class About
+	public partial class CalculadoraFibo
 	{
 
 		/// <summary>
-		/// FibonacciPanel control.
+		/// TextBox1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel FibonacciPanel;
+		protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
 		/// <summary>
-		/// CalculadoraFibonacci control.
+		/// TextoModificado control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraFibo CalculadoraFibonacci;
+		protected global::System.Web.UI.WebControls.Label TextoModificado;
 
 		/// <summary>
-		/// CalcularJurosPanel control.
+		/// VisitalLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel CalcularJurosPanel;
+		protected global::System.Web.UI.WebControls.Label VisitalLabel;
 
 		/// <summary>
-		/// CalculadoraJurosComposto control.
+		/// QtdeAlt control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraJurosComposto CalculadoraJurosComposto;
+		protected global::System.Web.UI.WebControls.Label QtdeAlt;
 
 		/// <summary>
-		/// CalcularSimulacaoFinancimanetoPanel control.
+		/// Button1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel CalcularSimulacaoFinancimanetoPanel;
+		protected global::System.Web.UI.WebControls.Button Button1;
 
 		/// <summary>
-		/// CalculadoraSimulacaoFinanciamento control.
+		/// Label1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraSimulacaoFinanciamento CalculadoraSimulacaoFinanciamento;
+		protected global::System.Web.UI.WebControls.Label Label1;
 	}
 }

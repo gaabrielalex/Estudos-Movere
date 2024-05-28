@@ -11,61 +11,79 @@ namespace CalculadoraWeb
 {
 
 
-	public partial class About
+	public partial class CalculadoraJurosComposto
 	{
 
 		/// <summary>
-		/// FibonacciPanel control.
+		/// ParcelaLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel FibonacciPanel;
+		protected global::System.Web.UI.WebControls.Label ParcelaLabel;
 
 		/// <summary>
-		/// CalculadoraFibonacci control.
+		/// ParcelaTBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraFibo CalculadoraFibonacci;
+		protected global::System.Web.UI.WebControls.TextBox ParcelaTBox;
 
 		/// <summary>
-		/// CalcularJurosPanel control.
+		/// TaxaLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel CalcularJurosPanel;
+		protected global::System.Web.UI.WebControls.Label TaxaLabel;
 
 		/// <summary>
-		/// CalculadoraJurosComposto control.
+		/// TaxaTBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraJurosComposto CalculadoraJurosComposto;
+		protected global::System.Web.UI.WebControls.TextBox TaxaTBox;
 
 		/// <summary>
-		/// CalcularSimulacaoFinancimanetoPanel control.
+		/// MesesLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel CalcularSimulacaoFinancimanetoPanel;
+		protected global::System.Web.UI.WebControls.Label MesesLabel;
 
 		/// <summary>
-		/// CalculadoraSimulacaoFinanciamento control.
+		/// MesesTBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::CalculadoraWeb.CalculadoraSimulacaoFinanciamento CalculadoraSimulacaoFinanciamento;
+		protected global::System.Web.UI.WebControls.TextBox MesesTBox;
+
+		/// <summary>
+		/// CalcularJurosButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button CalcularJurosButton;
+
+		/// <summary>
+		/// ResultadoJurosLabel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label ResultadoJurosLabel;
 	}
 }

@@ -103,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CalculadoraFibo.ascx" />
+    <Content Include="CalculadoraJurosComposto.ascx" />
+    <Content Include="CalculadoraSimulacaoFinanciamento.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -195,7 +198,27 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CalculadoraCopiaWeb.cs" />
+    <Compile Include="CalculadoraFibo.ascx.cs">
+      <DependentUpon>CalculadoraFibo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculadoraFibo.ascx.designer.cs">
+      <DependentUpon>CalculadoraFibo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CalculadoraJurosComposto.ascx.cs">
+      <DependentUpon>CalculadoraJurosComposto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculadoraJurosComposto.ascx.designer.cs">
+      <DependentUpon>CalculadoraJurosComposto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CalculadoraSimulacaoFinanciamento.ascx.cs">
+      <DependentUpon>CalculadoraSimulacaoFinanciamento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculadoraSimulacaoFinanciamento.ascx.designer.cs">
+      <DependentUpon>CalculadoraSimulacaoFinanciamento.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
