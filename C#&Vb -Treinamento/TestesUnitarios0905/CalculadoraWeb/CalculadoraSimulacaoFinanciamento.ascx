@@ -19,18 +19,18 @@
         width: 45vw;
     }
 
-    .conteudoSimulacaoFinanciamento tr {
+    .conteudoSimulacaoFinanciamento .campos tr {
        height: 50px;
     }
 
-    .conteudoSimulacaoFinanciamento td {
+    .conteudoSimulacaoFinanciamento .campos td {
        width: 70px;
     }
 
 </style>
 
 
-<h1> Calculadora de simulação financiamento(Em manutenção)</h1>
+<h1> Calculadora de simulação financiamento</h1>
 <h2><%=Nome %></h2>
 
 Favor preencher os campos para que seja realizado os calculos de simulação de financiamento:
@@ -38,7 +38,7 @@ Favor preencher os campos para que seja realizado os calculos de simulação de 
 <br />
    <br />
 <div class="conteudoSimulacaoFinanciamento">
-    <table>
+    <table class="campos">
         <tr>
             <td><asp:label runat="server" id="VlrFinanciamentoLabel" text="Valor do financiamento:" /></td>
             <td><asp:textbox runat="server" id="VlrFinanciamentoTxtBox" /></td>
