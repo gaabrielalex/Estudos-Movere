@@ -67,5 +67,41 @@ namespace CalculadoraWeb
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::CalculadoraWeb.CalculadoraSimulacaoFinanciamento CalculadoraSimulacaoFinanciamento;
+
+		/// <summary>
+		/// GerenciadorDeNomesPanel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel GerenciadorDeNomesPanel;
+
+		/// <summary>
+		/// NomeTextBox control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox NomeTextBox;
+
+		/// <summary>
+		/// AdicionarNomeButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button AdicionarNomeButton;
+
+		/// <summary>
+		/// NomesRepeater control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Repeater NomesRepeater;
 	}
 }

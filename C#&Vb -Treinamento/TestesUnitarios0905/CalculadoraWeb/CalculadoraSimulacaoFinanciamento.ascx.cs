@@ -11,6 +11,7 @@ namespace CalculadoraWeb
 {
 	public partial class CalculadoraSimulacaoFinanciamento : System.Web.UI.UserControl
 	{
+		public String Nome { get; set; }
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ResultadoFinanciamentoLabel.Text = "";
@@ -25,6 +26,7 @@ namespace CalculadoraWeb
 			}
 			else if (decimal.TryParse(VlrFinanciamentoTxtBox.Text, out decimal valorFinanciamento) && decimal.TryParse(TaxaJurosTxtBox.Text, out decimal taxaJuros) && int.TryParse(NumMaxParcelasTxtBox.Text, out int quantidadeParcelas))
 			{
+
 				//Instanciar a classe Calculadora
 				var calculadora = new Calculadora();
 				//Calculando
@@ -32,16 +34,9 @@ namespace CalculadoraWeb
 
 				ResultadoFinanciamentoLabel.Text = "Simulação realizada com sucesso!";
 
-				/*//Mostrar o resultado
-				var html = new StringBuilder();
+				SimulacaoFinanciamentoReapeter.DataSource = resultados;
+				SimulacaoFinanciamentoReapeter.DataBind();
 
-				html.Append("<b>Resultado da simulação:</b><br/>");
-
-
-				foreach (SimulacaoParcela simulacaoParcela in resultados)
-				{
-					Console.WriteLine($"{simulacaoParcela.Quantidade} X R$ {Math.Round(simulacaoParcela.ValorDaParcela, decimals: 2)} = R$ {Math.Round(simulacaoParcela.ValorTotal, decimals: 2)} [Total de Juros: R$ {Math.Round(simulacaoParcela.ValorJuros, decimals: 2)}] [{simulacaoParcela.Vencimento.ToString("dd/MM/yyyy")}]");
-				}*/
 			}
 			else
 			{

@@ -21,6 +21,8 @@
             <asp:Button runat="server" Text="Calcular Juros" OnClick="Unnamed_Click1" />
             <br />
             <asp:Button runat="server" Text="Calcular Simulação de Financiamento" OnClick="Unnamed_Click2" />
+			<br />
+            <asp:Button runat="server" Text="Gerenciador de Nomes" OnClick="Unnamed_Click3" />
         </div>
 
         <asp:panel runat="server" ID="FibonacciPanel" Visible="false">
@@ -33,8 +35,24 @@
 
 
          <asp:Panel runat="server" ID="CalcularSimulacaoFinancimanetoPanel" Visible="false">
-            <calc:CalculadoraSimulacaoFinanciamento runat="server" ID="CalculadoraSimulacaoFinanciamento" />
+            <calc:CalculadoraSimulacaoFinanciamento nome="Texte Simples" runat="server" ID="CalculadoraSimulacaoFinanciamento" />
          </asp:Panel>
+
+         <asp:Panel runat="server" ID="GerenciadorDeNomesPanel" Visible="false">
+           <h1>Gerenciador de Nomes</h1>
+			 <br />
+           <asp:Label runat="server" Text="Informe seu nome:">
+                <asp:TextBox runat="server" ID="NomeTextBox" />
+           </asp:Label><br /><br /><asp:Button runat="server" Text="Adicionar" id="AdicionarNomeButton" OnClick="AdicionarNomeButton_Click" />
+
+           <ul>
+                <asp:Repeater runat="server" ID="NomesRepeater">
+					<ItemTemplate>
+						<li><%# Container.DataItem %></li>
+					</ItemTemplate>
+				</asp:Repeater>
+           </ul>
+        </asp:Panel>
 
 
         <%--Tudo dessarrumado daqui para baixo--%>

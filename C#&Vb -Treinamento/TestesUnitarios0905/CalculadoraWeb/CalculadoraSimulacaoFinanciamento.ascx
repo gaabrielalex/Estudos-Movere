@@ -16,7 +16,7 @@
     .conteudoSimulacaoFinanciamento {
         display: inline-flex;
         flex-direction: column;
-
+        width: 45vw;
     }
 
     .conteudoSimulacaoFinanciamento tr {
@@ -30,7 +30,8 @@
 </style>
 
 
-<h1> Calculadora de simulação financiamento(Não implementado, estrutura copiada do juros composto)</h1>
+<h1> Calculadora de simulação financiamento(Em manutenção)</h1>
+<h2><%=Nome %></h2>
 
 Favor preencher os campos para que seja realizado os calculos de simulação de financiamento:
 
@@ -51,24 +52,45 @@ Favor preencher os campos para que seja realizado os calculos de simulação de 
             <td><asp:textbox runat="server" id="TaxaJurosTxtBox" /></td>
         </tr>
     </table>
+    <br />
     <div class="divbtncalcular">
         <asp:button runat="server" id="CalcularFinanciamentoButton" text="calcular" onclick="CalcularFinanciamentoButton_Click" />
     </div>
+    <br />
     <div class="divresultado">
         resultado: <asp:label id="ResultadoFinanciamentoLabel" runat="server" text="text"></asp:label>
     </div>
 
+	<br />
     <asp:Repeater runat="server" ID="SimulacaoFinanciamentoReapeter">
         <HeaderTemplate>
-            <ul>
+            <table width="100%" border="1">
+            	<tr>
+					<th>Simulacao</th>
+					<th>Valor total</th>
+					<th>Juros</th>
+					<th>Vencimento</th>
+				</tr>
         </HeaderTemplate>
         <ItemTemplate>
-            <li>
-                <% %>
-            </li>
+            <tr>
+                <td><%# DataBinder.Eval((Container.DataItem), "Quantidade") %> x <%# DataBinder.Eval((Container.DataItem), "ValorDaParcela") %> </td>
+                <td> <big>R$  <%# DataBinder.Eval((Container.DataItem), "ValorTotal")%> </big> </td>
+                <td> <small>R$  <%# DataBinder.Eval((Container.DataItem), "ValorJuros")%> </small> </td>
+                <td><b> Último vencimento: <%# ((DateTime)DataBinder.Eval((Container.DataItem), "Vencimento")).ToString("dd/MM/yyyy") %> </b></td>
+            </tr>
         </ItemTemplate>
+        <AlternatingItemTemplate>
+            <tr style="background-color: #ccc">
+                <td><%# DataBinder.Eval((Container.DataItem), "Quantidade") %> x <%# DataBinder.Eval((Container.DataItem), "ValorDaParcela") %> </td>
+                <td> <big>R$  <%# DataBinder.Eval((Container.DataItem), "ValorTotal")%> </big> </td>
+	            <td> <small>R$  <%# DataBinder.Eval((Container.DataItem), "ValorJuros")%> </small> </td>
+	            <td><b> Último vencimento: <%# ((DateTime)DataBinder.Eval((Container.DataItem), "Vencimento")).ToString("dd/MM/yyyy") %> </b></td>
+            </tr>
+        </AlternatingItemTemplate>
         <FooterTemplate>
-            </ul>
+            </table>
         </FooterTemplate>
     </asp:Repeater>
 </div>
+				
