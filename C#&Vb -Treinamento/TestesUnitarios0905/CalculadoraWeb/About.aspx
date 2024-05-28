@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="CalculadoraWeb.About" %>
 
-<%--<%@ Import Namespace="ConsoleAppCSharp" %>--%> 
-
 <%@ Register TagPrefix="calc" TagName="CalculadoraFibo" Src="~/CalculadoraFibo.ascx" %>
 <%@ Register TagPrefix="calc" TagName="CalculadoraJurosComposto" Src="~/CalculadoraJurosComposto.ascx" %>
 <%@ Register TagPrefix="calc" TagName="CalculadoraSimulacaoFinanciamento" Src="~/CalculadoraSimulacaoFinanciamento.ascx" %>
