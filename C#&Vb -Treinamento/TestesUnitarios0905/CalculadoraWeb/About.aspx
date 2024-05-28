@@ -8,7 +8,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style>
-
        
     </style>
 </asp:Content>
@@ -48,7 +47,11 @@
            <ul>
                 <asp:Repeater runat="server" ID="NomesRepeater">
 					<ItemTemplate>
-						<li><%# Container.DataItem %></li>
+                        <li> 
+                            <a href="#" onClick="mostrarConsoleInvertendoString(' <%# Container.DataItem %> ')" >
+                                <%# Container.DataItem %>
+                            </a>
+                        </li>
 					</ItemTemplate>
 				</asp:Repeater>
            </ul>
@@ -89,4 +92,30 @@
 
         </asp:Panel>--%>
     </main>
+</asp:Content>
+
+<asp:Content ID="Scripts" ContentPlaceHolderID="Footer" runat="server">
+    <script>
+        function mostrarConsoleInvertendoString(str) {
+            let stringRevertida = inverterString(str);
+
+            alert(stringRevertida);
+        }
+
+        function inverterString(str) {
+            //Desmebra o a string em uma array de strings, pelo o que a string deve ser separada
+            //definido como vazio, logo cada caractere dela deve ser separado
+            let arrayDaString = str.split('');
+
+            //Pega a array e dá um reverse nos elementos dela
+            let arrayRevertida = arrayDaString.reverse();
+
+            //Transforma o array em uma string novamente. O método join junta os elementos da array
+            //ele recebe como parâmetro o que separara esses elementos, nesse caso é ára juntar sem
+            //nenhum topo de separação, logo passamos o argumento como uma string vazia
+            let stringRevertida = arrayRevertida.join('');
+
+            return stringRevertida;
+        }
+    </script>
 </asp:Content>
