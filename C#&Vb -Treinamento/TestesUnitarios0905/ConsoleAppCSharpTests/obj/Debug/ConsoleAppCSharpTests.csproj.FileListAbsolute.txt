@@ -26,11 +26,9 @@ C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharpTests.dll
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharpTests.pdb
-C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharp.exe
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharp.pdb
-C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharp.exe.config
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\obj\Debug\ConsoleA.6E93AED9.Up2Date
@@ -41,3 +39,5 @@ C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\FluentAssertions.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharp.dll
+C:\Users\GabrielSilva\Desktop\Estudos-Movere\C#&Vb -Treinamento\TestesUnitarios0905\ConsoleAppCSharpTests\bin\Debug\ConsoleAppCSharp.dll.config

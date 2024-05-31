@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CalculadoraCompleta.aspx" />
     <Content Include="CalculadoraFibo.ascx" />
     <Content Include="CalculadoraJurosComposto.ascx" />
     <Content Include="CalculadoraSimulacaoFinanciamento.ascx" />
@@ -199,6 +200,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CalculadoraCompleta.aspx.cs">
+      <DependentUpon>CalculadoraCompleta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculadoraCompleta.aspx.designer.cs">
+      <DependentUpon>CalculadoraCompleta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CalculadoraFibo.ascx.cs">
       <DependentUpon>CalculadoraFibo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
