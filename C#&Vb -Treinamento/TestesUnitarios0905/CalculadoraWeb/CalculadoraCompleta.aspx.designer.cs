@@ -33,6 +33,15 @@ namespace CalculadoraWeb
 		protected global::System.Web.UI.WebControls.Label PrimeiroNumeroLabel;
 
 		/// <summary>
+		/// PrimeiroNumeroHidden control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputHidden PrimeiroNumeroHidden;
+
+		/// <summary>
 		/// NumeroAtualLabel control.
 		/// </summary>
 		/// <remarks>
@@ -49,33 +58,6 @@ namespace CalculadoraWeb
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.HtmlControls.HtmlInputHidden NumeroAtualHidden;
-
-		/// <summary>
-		/// OperacaoCEButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button OperacaoCEButton;
-
-		/// <summary>
-		/// OperacaoCButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button OperacaoCButton;
-
-		/// <summary>
-		/// OperacaoBackSpaceButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button OperacaoBackSpaceButton;
 
 		/// <summary>
 		/// OperacaoDividirButton control.
@@ -103,24 +85,6 @@ namespace CalculadoraWeb
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button OperacaoSubtrairButton;
-
-		/// <summary>
-		/// MaisMenosButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button MaisMenosButton;
-
-		/// <summary>
-		/// VirgulaButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button VirgulaButton;
 
 		/// <summary>
 		/// OperacaoSomarButton control.

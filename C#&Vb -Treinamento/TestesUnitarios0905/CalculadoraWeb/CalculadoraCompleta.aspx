@@ -25,7 +25,10 @@
 	<div class="row">
 		<div class="col">
 			Primeiro:
+
 			<asp:Label runat="server" ID="PrimeiroNumeroLabel"></asp:Label>
+			<input type="hidden" id="PrimeiroNumeroHidden" runat="server"  value="0"/>
+
 		</div>
 	</div>
 	<div class="row m-2">
@@ -41,24 +44,24 @@
 		<div class="col-1">
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="OperacaoCEButton" Text="CE" CssClass="btn btn-primary btn-lg" OnClick="OperacaoCEButton_Click" />
+			<button class="btn btn-primary btn-lg" OnClick="meuApp.calculadora.operacaoCE(); return false;">CE</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="OperacaoCButton" Text="C" CssClass="btn btn-primary btn-lg" OnClick="OperacaoCButton_Click" />
+			<button class="btn btn-primary btn-lg" OnClick="meuApp.calculadora.operacaoC(); return false;">C</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="OperacaoBackSpaceButton" Text="<=" CssClass="btn btn-primary btn-lg" OnClick="OperacaoBackSpaceButton_Click" />
+			<button class="btn btn-primary btn-lg" OnClick="meuApp.calculadora.operacaoBackSpace(); return false;"><=</button>
 		</div>
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('7'); return false;">7</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('7'); return false;">7</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('8'); return false;">8</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('8'); return false;">8</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('9'); return false;">9</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('9'); return false;">9</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoDividirButton" Text="÷" CssClass="btn btn-primary btn-lg" OnClick="OperacaoDividirButton_Click" />
@@ -66,13 +69,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('4'); return false;">4</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('4'); return false;">4</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('5'); return false;">5</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('5'); return false;">5</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('6'); return false;">6</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('6'); return false;">6</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoMultiplicarButton" Text="x" CssClass="btn btn-primary btn-lg" OnClick="OperacaoMultiplicarButton_Click" />
@@ -80,13 +83,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('1'); return false;">1</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('1'); return false;">1</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('2'); return false;">2</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('2'); return false;">2</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('3'); return false;">3</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('3'); return false;">3</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoSubtrairButton" Text="-" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSubtrairButton_Click" />
@@ -94,13 +97,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<asp:Button runat="server" ID="MaisMenosButton" Text="+/-" CssClass="btn btn-info btn-lg" OnClick="MaisMenosButton_Click" />
+			<button class="btn btn-info btn-lg" OnClick="meuApp.calculadora.negarNumAtual(); return false;" >+/-</button>
 		</div>
 		<div class="col-1">
-			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('0'); return false;">0</button>
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.calculadora.adicionarDigito('0'); return false;">0</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="VirgulaButton" Text="," CssClass="btn btn-info btn-lg" OnClick="VirgulaButton_Click" />
+			<button class="btn btn-info btn-lg" OnClick="meuApp.calculadora.colocarVirgula(); return false;" >,</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoSomarButton" Text="+" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSomarButton_Click" />
@@ -111,6 +114,7 @@
 		var meuApp = {
 			componenteEscondido: "<%=NumeroAtualHidden.ClientID %>",
 			labelComNumero: "<%=NumeroAtualLabel.ClientID %>"
+			
 		}
 	</script>
 

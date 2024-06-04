@@ -13,15 +13,17 @@ namespace CalculadoraWeb
 		{
 			get
 			{
-				return PrimeiroNumeroLabel.Text;
+				return PrimeiroNumeroHidden.Value;
 			}
 			set
 			{
 				if (string.IsNullOrEmpty(value))
 				{
+					PrimeiroNumeroHidden.Value = "";
 					PrimeiroNumeroLabel.Text = "";
 					return;
 				}
+				PrimeiroNumeroHidden.Value = Math.Round(decimal.Parse(value), decimals: 4).ToString();
 				PrimeiroNumeroLabel.Text = Math.Round(decimal.Parse(value), decimals: 4).ToString();
 			}
 		}
