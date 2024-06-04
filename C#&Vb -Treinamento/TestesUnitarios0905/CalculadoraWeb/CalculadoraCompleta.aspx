@@ -114,7 +114,6 @@
 		var meuApp = {
 			componenteEscondido: "<%=NumeroAtualHidden.ClientID %>",
 			labelComNumero: "<%=NumeroAtualLabel.ClientID %>"
-			
 		}
 	</script>
 

@@ -16,7 +16,6 @@ var meuApp = meuApp || {};
 		}
 
 		set numAtual(value) {
-
 			this.hid.value = value;
 			this.lab.innerText = value;
 		}
