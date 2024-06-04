@@ -2,10 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<style>
-		input[type="submit"] {
+		input[type="submit"], button {
 			width: 60px;
 			height: 60px;
 		}
+
 		.error {
 			font-weight: bold;
 			color: red;
@@ -30,7 +31,10 @@
 	<div class="row m-2">
 		<div class="col">
 			Atual:
+
 			<asp:Label runat="server" ID="NumeroAtualLabel" Text="0"></asp:Label>
+			<input type="hidden" id="NumeroAtualHidden" runat="server"  value="0"/>
+
 		</div>
 	</div>
 	<div class="row m-2">
@@ -48,13 +52,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero7Button" Text="7" CssClass="btn btn-secondary btn-lg" OnClick="Numero7Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('7'); return false;">7</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero8Button" Text="8" CssClass="btn btn-secondary btn-lg" OnClick="Numero8Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('8'); return false;">8</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero9Button" Text="9" CssClass="btn btn-secondary btn-lg" OnClick="Numero9Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('9'); return false;">9</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoDividirButton" Text="÷" CssClass="btn btn-primary btn-lg" OnClick="OperacaoDividirButton_Click" />
@@ -62,13 +66,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero4Button" Text="4" CssClass="btn btn-secondary btn-lg" OnClick="Numero4Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('4'); return false;">4</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero5Button" Text="5" CssClass="btn btn-secondary btn-lg" OnClick="Numero5Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('5'); return false;">5</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero6Button" Text="6" CssClass="btn btn-secondary btn-lg" OnClick="Numero6Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('6'); return false;">6</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoMultiplicarButton" Text="x" CssClass="btn btn-primary btn-lg" OnClick="OperacaoMultiplicarButton_Click" />
@@ -76,13 +80,13 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero1NButton" Text="1" CssClass="btn btn-secondary btn-lg" OnClick="Numero1Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('1'); return false;">1</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero2Button" Text="2" CssClass="btn btn-secondary btn-lg" OnClick="Numero2Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('2'); return false;">2</button>
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero3Button" Text="3" CssClass="btn btn-secondary btn-lg" OnClick="Numero3Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('3'); return false;">3</button>
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoSubtrairButton" Text="-" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSubtrairButton_Click" />
@@ -90,15 +94,25 @@
 	</div>
 	<div class="row m-2">
 		<div class="col-1">
+			<asp:Button runat="server" ID="MaisMenosButton" Text="+/-" CssClass="btn btn-info btn-lg" OnClick="MaisMenosButton_Click" />
 		</div>
 		<div class="col-1">
-			<asp:Button runat="server" ID="Numero0Button" Text="0" CssClass="btn btn-secondary btn-lg" OnClick="Numero0Button_Click" />
+			<button class="btn btn-secondary btn-lg" OnClick="meuApp.adicionarDigito('0'); return false;">0</button>
 		</div>
 		<div class="col-1">
+			<asp:Button runat="server" ID="VirgulaButton" Text="," CssClass="btn btn-info btn-lg" OnClick="VirgulaButton_Click" />
 		</div>
 		<div class="col-1">
 			<asp:Button runat="server" ID="OperacaoSomarButton" Text="+" CssClass="btn btn-primary btn-lg" OnClick="OperacaoSomarButton_Click" />
 		</div>
 	</div>
-</asp:Content>
 
+	<script type="text/javascript">
+		var meuApp = {
+			componenteEscondido: "<%=NumeroAtualHidden.ClientID %>",
+			labelComNumero: "<%=NumeroAtualLabel.ClientID %>"
+		}
+	</script>
+
+	<script src="Scripts/meus-scripts.js" type="text/javascript"> </script>
+</asp:Content>

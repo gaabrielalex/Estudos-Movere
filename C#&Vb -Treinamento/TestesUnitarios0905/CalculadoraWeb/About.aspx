@@ -5,21 +5,21 @@
 <%@ Register TagPrefix="calc" TagName="CalculadoraSimulacaoFinanciamento" Src="~/CalculadoraSimulacaoFinanciamento.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <style>
+	<style>
        
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main aria-labelledby="title">
+	<main aria-labelledby="title">
 
         <div>
-			<asp:Button runat="server" Text="Calcular Fibonacci" OnClick="Unnamed_Click" />
+			<asp:Button runat="server" Text="Calcular Fibonacci" ID="FibonacciButton" OnClick="AjustarVisibilidadeDoPainel_click" />
 			<br />
-            <asp:Button runat="server" Text="Calcular Juros" OnClick="Unnamed_Click1" />
+            <asp:Button runat="server" Text="Calcular Juros" ID="CalcularJurosButton" OnClick="AjustarVisibilidadeDoPainel_click" />
             <br />
-            <asp:Button runat="server" Text="Calcular Simulação de Financiamento" OnClick="Unnamed_Click2" />
+            <asp:Button runat="server" Text="Calcular Simulação de Financiamento" ID="CalcularSimulacaoFinancimanetoButton" OnClick="AjustarVisibilidadeDoPainel_click" />
 			<br />
-            <asp:Button runat="server" Text="Gerenciador de Nomes" OnClick="Unnamed_Click3" />
+            <asp:Button runat="server" Text="Gerenciador de Nomes" ID="GerenciadorDeNomesButton" OnClick="AjustarVisibilidadeDoPainel_click" />
         </div>
 
         <asp:panel runat="server" ID="FibonacciPanel" Visible="false">

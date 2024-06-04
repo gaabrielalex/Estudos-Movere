@@ -29,10 +29,11 @@ namespace CalculadoraWeb
 		{
 			get
 			{
-				return NumeroAtualLabel.Text;
+				return NumeroAtualHidden.Value;
 			}
 			set
 			{
+				NumeroAtualHidden.Value = value;
 				NumeroAtualLabel.Text = value;
 			}
 		}
@@ -41,75 +42,21 @@ namespace CalculadoraWeb
 			ErroLabel.Text = "";
 		}
 
-		protected void Numero1Button_Click(object sender, EventArgs e)
+		protected void btnAddNumero_Click(object sender, EventArgs e)
 		{
+			Button clickedButton = (Button)sender;
+
+			//Fazer o cast asssim é melhor pois caso o sender não seja um button não lancara uma exceção de
+			//cast, do jeito de cima lançara uma exceção
+			Button clickButton = sender as Button;
+
+			string valor = clickedButton.Text;
+
+
 			if (NumeroAtual == "0")
-				NumeroAtual = "1";
+				NumeroAtual = valor;
 			else
-			NumeroAtual = NumeroAtual + "1";
-		}
-		protected void Numero2Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "2";
-			else
-			NumeroAtual = NumeroAtual + "2";
-		}
-		protected void Numero3Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "3";
-			else
-			NumeroAtual = NumeroAtual + "3";
-		}
-		protected void Numero4Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "4";
-			else
-			NumeroAtual = NumeroAtual + "4";
-		}
-		protected void Numero5Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "5";
-			else
-			NumeroAtual = NumeroAtual + "5";
-		}
-		protected void Numero6Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "6";
-			else
-			NumeroAtual = NumeroAtual + "6";
-		}
-		protected void Numero7Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "7";
-			else
-			NumeroAtual = NumeroAtual + "7";
-		}
-		protected void Numero8Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "8";
-			else
-			NumeroAtual = NumeroAtual + "8";
-		}
-		protected void Numero9Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtual == "0")
-				NumeroAtual = "9";
-			else
-			NumeroAtual = NumeroAtual + "9";
-		}
-		protected void Numero0Button_Click(object sender, EventArgs e)
-		{
-			if (NumeroAtualLabel.Text == "0")
-				return;
-			else
-			NumeroAtual = NumeroAtual + "0";
+				NumeroAtual = NumeroAtual + valor;
 		}
 
 		protected void OperacaoSomarButton_Click(object sender, EventArgs e)
@@ -194,6 +141,22 @@ namespace CalculadoraWeb
 				PrimeiroNumero = (primeiro / atual).ToString();
 			}
 			NumeroAtual = "0";
+		}
+
+		protected void VirgulaButton_Click(object sender, EventArgs e)
+		{
+			if (!NumeroAtual.Contains(","))
+				NumeroAtual += ",";
+		}
+
+		protected void MaisMenosButton_Click(object sender, EventArgs e)
+		{
+			if(NumeroAtual.StartsWith("-"))
+			{
+				NumeroAtual = NumeroAtual.Substring(1);
+			} else {
+				NumeroAtual = "-" + NumeroAtual;
+			}
 		}
 	}
 }

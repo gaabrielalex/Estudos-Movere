@@ -31,38 +31,12 @@ namespace CalculadoraWeb
 			}
 		}
 
-		protected void Unnamed_Click(object sender, EventArgs e)
+		protected void AjustarVisibilidadeDoPainel_click(object sender, EventArgs e)
 		{
-			FibonacciPanel.Visible = true;
-			CalcularJurosPanel.Visible = false;
-			CalcularSimulacaoFinancimanetoPanel.Visible = false;
-			GerenciadorDeNomesPanel.Visible = false;
-
-		}
-
-		protected void Unnamed_Click1(object sender, EventArgs e)
-		{
-			FibonacciPanel.Visible = false;
-			CalcularJurosPanel.Visible = true;
-			CalcularSimulacaoFinancimanetoPanel.Visible = false;
-			GerenciadorDeNomesPanel.Visible = false;
-
-		}
-
-		protected void Unnamed_Click2(object sender, EventArgs e)
-		{
-			FibonacciPanel.Visible = false;
-			CalcularJurosPanel.Visible = false;
-			CalcularSimulacaoFinancimanetoPanel.Visible = true;
-			GerenciadorDeNomesPanel.Visible = false;
-		}
-
-		protected void Unnamed_Click3(object sender, EventArgs e)
-		{
-			FibonacciPanel.Visible = false;
-			CalcularJurosPanel.Visible = false;
-			CalcularSimulacaoFinancimanetoPanel.Visible = false;
-			GerenciadorDeNomesPanel.Visible = true;
+			FibonacciPanel.Visible = sender == FibonacciButton;
+			CalcularJurosPanel.Visible = sender == CalcularJurosButton;
+			CalcularSimulacaoFinancimanetoPanel.Visible = sender == CalcularSimulacaoFinancimanetoButton;
+			GerenciadorDeNomesPanel.Visible = sender == GerenciadorDeNomesButton;
 		}
 
 		protected void AdicionarNomeButton_Click(object sender, EventArgs e)
