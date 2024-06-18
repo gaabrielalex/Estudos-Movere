@@ -132,7 +132,6 @@ BEGIN
         DECLARE @IdFiliacaoInserido INT;
         SET @IdFiliacaoInserido = SCOPE_IDENTITY();
 
-
 		-- Inserindo Cliente
 		INSERT INTO Cliente (IdCliente, IdFiliacao, Nome, DataDeNascimento, NomeConjuge)
 		VALUES (@IdCliente, @IdFiliacaoInserido, @NomeCliente, @DataDeNascimento, @NomeConjuge);
