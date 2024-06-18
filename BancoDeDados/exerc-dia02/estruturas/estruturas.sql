@@ -1,60 +1,4 @@
 
--- Criação Estrtura Procedure Inserir Clientes
-CREATE TABLE LogErros (
-    LogID INT IDENTITY(1,1),
-    MensagemErro TEXT,
-    DataErro DATETIME NULL DEFAULT GETDATE(),
-	CONSTRAINT PK_LogErros PRIMARY KEY(LogID)
-);
-
-CREATE PROCEDURE spInserirCliente
-	@NomePai varchar(300),
-	@NomeMae varchar(300)
-AS
-BEGIN
-	BEGIN TRANSACTION
-		BEGIN TRY
-			INSERT INTO Filiacao(NomePai, NomeMae)
-			VALUES (@NomePai, @NomeMae);
-
-			DECLARE @IdFiliacaoInserido;
-			SET @IdFiliacaoInserido = SCOPE_IDENTITY();
-
-			COMMIT TRANSACTION;
-		END TRY
-		BEGIN CATCH
-			ROLLBACK TRANSACTION;
-			-- Capturando e retornando informações sobre o erro
-			DECLARE @ErroMensagem NVARCHAR(4000);
-			DECLARE @ErroNumero INT;
-			DECLARE @ErroSeveridade INT;
-			DECLARE @ErroEstado INT;
-			DECLARE @ErroLinha INT;
-
-			SELECT 
-				@ErroMensagem = ERROR_MESSAGE(),
-				@ErroNumero = ERROR_NUMBER(),
-				@ErroSeveridade = ERROR_SEVERITY(),
-				@ErroEstado = ERROR_STATE(),
-				@ErroLinha = ERROR_LINE();
-
-			-- Retornando informações sobre o erro
-			RAISERROR (
-				'Erro %d, Severidade %d, Estado %d, Linha %d: %s',
-				@ErroSeveridade, 
-				@ErroEstado, 
-				@ErroNumero, 
-				@ErroLinha, 
-				@ErroMensagem
-			);
-		
-			INSERT INTO LogErros(MensagemErro)
-			VALUES (
-            FORMATMESSAGE('Erro %d, Severidade %d, Estado %d, Linha %d: %s', 
-                          @ErroSeveridade, @ErroEstado, @ErroNumero, @ErroLinha, @ErroMensagem)
-			);
-		END CACTH
-END;
 
 -- Criação de tabelas
 CREATE TABLE Filiacao (
@@ -67,9 +11,8 @@ CREATE TABLE Filiacao (
 CREATE TABLE Cliente (
 	IdCliente int NOT NULL,
 	IdFiliacao int NOT NULL,
-	Nome varchar(50) NOT NULL,
-	Sobrenome varchar(250) NOT NULL,
-	DataDeNascimento datetime NOT NULL,
+	Nome varchar(300) NOT NULL,
+	DataDeNascimento datetime NULL,
 	DataDeCadastro datetime NULL DEFAULT GETDATE(),
 	NomeConjuge varchar(300) NULL,
 	CONSTRAINT PK_Cliente PRIMARY KEY(IdCliente),
@@ -115,7 +58,6 @@ CREATE TABLE Pais (
 	CONSTRAINT PK_Pais PRIMARY KEY(IdPais)
 );
 
-
 CREATE TABLE Estado (
 	IdEstado char(2) NOT NULL,
 	IdPais int NOT NULL,
@@ -159,9 +101,76 @@ CREATE TABLE EnderecoPorCliente (
 	IdCliente int NOT NULL,
 	IdEndereco int NOT NULL,
 	IdTipoEndereco int NOT NULL,
-	Numero varchar(10) NULL DEFAULT 'S/N',
 	CONSTRAINT PK_EnderecoPorCliente PRIMARY KEY(IdCliente,IdEndereco,IdTipoEndereco),
 	CONSTRAINT FK_EnderecoPorCliente_Cliente FOREIGN KEY(IdCliente) REFERENCES Cliente (IdCliente),
 	CONSTRAINT FK_EnderecoPorCliente_Endereco FOREIGN KEY(IdEndereco) REFERENCES Endereco (IdEndereco),
 	CONSTRAINT FK_EnderecoPorCliente_TipoEndereco FOREIGN KEY(IdTipoEndereco) REFERENCES TipoEndereco (IdTipoEndereco)
 );
+
+-- Criação Estrtura Procedure Inserir Clientes
+CREATE TABLE LogErros (
+    LogID INT IDENTITY(1,1),
+    MensagemErro TEXT,
+    DataErro DATETIME NULL DEFAULT GETDATE(),
+	CONSTRAINT PK_LogErros PRIMARY KEY(LogID)
+);
+
+CREATE PROCEDURE spInserirCliente
+	@IdCliente INT,
+	@NomeCliente VARCHAR(300),
+    @NomePai VARCHAR(300),
+    @NomeMae VARCHAR(300),
+	@DataDeNascimento DATETIME,
+	@NomeConjuge VARCHAR(300)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    BEGIN TRY
+        INSERT INTO Filiacao (NomePai, NomeMae)
+        VALUES (@NomePai, @NomeMae);
+
+        DECLARE @IdFiliacaoInserido INT;
+        SET @IdFiliacaoInserido = SCOPE_IDENTITY();
+
+
+		-- Inserindo Cliente
+		INSERT INTO Cliente (IdCliente, IdFiliacao, Nome, DataDeNascimento, NomeConjuge)
+		VALUES (@IdCliente, @IdFiliacaoInserido, @NomeCliente, @DataDeNascimento, @NomeConjuge);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+
+        -- Capturando e retornando informações sobre o erro
+        DECLARE @ErroMensagem NVARCHAR(4000);
+        DECLARE @ErroNumero INT;
+        DECLARE @ErroSeveridade INT;
+        DECLARE @ErroEstado INT;
+        DECLARE @ErroLinha INT;
+
+        SELECT 
+            @ErroMensagem = ERROR_MESSAGE(),
+            @ErroNumero = ERROR_NUMBER(),
+            @ErroSeveridade = ERROR_SEVERITY(),
+            @ErroEstado = ERROR_STATE(),
+            @ErroLinha = ERROR_LINE();
+
+        -- Retornando informações sobre o erro
+        RAISERROR (
+            'Erro %d, Severidade %d, Estado %d, Linha %d: %s',
+            @ErroSeveridade, 
+            @ErroEstado, 
+            @ErroNumero, 
+            @ErroLinha, 
+            @ErroMensagem
+        );
+
+        -- Inserção do erro no LogErros
+        INSERT INTO LogErros (MensagemErro)
+        VALUES (
+            FORMATMESSAGE('Erro %d, Severidade %d, Estado %d, Linha %d: %s', 
+                          @ErroSeveridade, @ErroEstado, @ErroNumero, @ErroLinha, @ErroMensagem)
+        );
+    END CATCH;
+END;

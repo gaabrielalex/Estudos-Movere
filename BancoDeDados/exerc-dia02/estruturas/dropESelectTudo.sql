@@ -28,3 +28,7 @@ DROP TABLE DependenteCliente;
 DROP TABLE Cliente;
 
 DROP TABLE Filiacao;
+
+DROP PROCEDURE spInserirCliente;
+
+DROP TABLE LogErros;
