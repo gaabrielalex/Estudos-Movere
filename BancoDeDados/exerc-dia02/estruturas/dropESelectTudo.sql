@@ -27,5 +27,4 @@ DROP TABLE DependenteCliente;
 
 DROP TABLE Cliente;
 
-
 DROP TABLE Filiacao;
