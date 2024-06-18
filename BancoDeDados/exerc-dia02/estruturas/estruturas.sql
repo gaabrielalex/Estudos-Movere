@@ -1,4 +1,33 @@
 
+-- Criação Estrtura Procedure Inserir Clientes
+CREATE TABLE LogErros (
+    LogID INT IDENTITY(1,1),
+    MensagemErro TEXT,
+    DataErro DATETIME NULL DEFAULT GETDATE(),
+	CONSTRAINT PK_LogErros PRIMARY KEY(LogID)
+);
+
+CREATE PROCEDURE spInserirCliente
+	@NomePai varchar(300),
+	@NomeMae varchar(300)
+AS
+BEGIN
+	BEGIN TRANSACTION
+		BEGIN TRY
+			INSERT INTO Filiacao(NomePai, NomeMae)
+			VALUES (@NomePai, @NomeMae);
+
+			DECLARE @IdFiliacaoInserido;
+			SET @IdFiliacaoInserido = SCOPE_IDENTITY();
+
+			COMMIT TRANSACTION;
+		END TRY
+		BEGIN CATCH
+			ROLLBACK Tra
+	
+END;
+
+-- Criação de tabelas
 CREATE TABLE Filiacao (
 	IdFiliacao int,
 	NomePai varchar(300),
@@ -53,16 +82,25 @@ CREATE TABLE Telefone (
 
 CREATE TABLE Pais (
 	IdPais int,
-	Nome varchar(200),
+	Nome varchar(100),
 	CONSTRAINT PK_Pais PRIMARY KEY(IdPais)
 );
 
+
+CREATE TABLE Estado (
+	IdEstado char(2),
+	IdPais int,
+	Nome varchar(100),
+	CONSTRAINT PK_Estado PRIMARY KEY(IdEstado),
+	CONSTRAINT FK_Estado_Pais FOREIGN KEY(IdPais) REFERENCES Pais (IdPais)
+)
+
 CREATE TABLE Cidade (
 	IdCidade int,
-	IdPais int,
+	IdEstado char(2),
 	Nome varchar(200),
-	FOREIGN KEY(IdPais) REFERENCES Pais (IdPais),
-	CONSTRAINT PK_Cidade PRIMARY KEY(IdCidade)
+	CONSTRAINT PK_Cidade PRIMARY KEY(IdCidade),
+	CONSTRAINT FK_Cidade_Estado FOREIGN KEY(IdEstado) REFERENCES Estado (IdEstado)
 );
 
 CREATE TABLE Bairro (
@@ -98,4 +136,3 @@ CREATE TABLE EnderecoPorCliente (
 	CONSTRAINT FK_EnderecoPorCliente_Endereco FOREIGN KEY(IdEndereco) REFERENCES Endereco (IdEndereco),
 	CONSTRAINT FK_EnderecoPorCliente_TipoEndereco FOREIGN KEY(IdTipoEndereco) REFERENCES TipoEndereco (IdTipoEndereco)
 );
-
