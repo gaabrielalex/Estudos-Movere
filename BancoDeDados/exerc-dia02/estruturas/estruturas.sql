@@ -29,12 +29,12 @@ CREATE TABLE DependenteCliente (
 );
 
 CREATE TABLE ValidacaoDeCredito (
-	IdValidacaoDeCredito int NOT NULL,
-	CodigoCliente int NOT NULL,
-	Data datetime NOT NULL,
+	IdValidacaoDeCredito int IDENTITY(1,1) NOT NULL,
+	IdCliente int NOT NULL,
+	Data datetime NULL,
 	Status char(1) NOT NULL,
 	CONSTRAINT PK_ValidacaoDeCredito PRIMARY KEY(IdValidacaoDeCredito),
-	CONSTRAINT FK_ValidacaoDeCredito_Cliente FOREIGN KEY(CodigoCliente) REFERENCES Cliente (IdCliente)
+	CONSTRAINT FK_ValidacaoDeCredito_Cliente FOREIGN KEY(IdCliente) REFERENCES Cliente (IdCliente)
 );
 
 CREATE TABLE TipoTelefone (
@@ -107,7 +107,7 @@ CREATE TABLE EnderecoPorCliente (
 	CONSTRAINT FK_EnderecoPorCliente_TipoEndereco FOREIGN KEY(IdTipoEndereco) REFERENCES TipoEndereco (IdTipoEndereco)
 );
 
--- Criação Estrtura Procedure Inserir Clientes
+-- Criação Estrutura Procedure Inserir Clientes
 CREATE TABLE LogErros (
     LogID INT IDENTITY(1,1),
     MensagemErro TEXT,

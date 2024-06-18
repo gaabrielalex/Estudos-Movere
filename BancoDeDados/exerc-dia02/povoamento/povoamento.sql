@@ -24,6 +24,22 @@ INSERT INTO Bairro(IdBairro, Nome)
 	FROM  APUMinasPneus.dbo.t0149
 );
 
+INSERT INTO ValidacaoDeCredito (IdCliente, Data, Status)
+(
+	SELECT 
+		f0050idclifor, 
+		f0050datahorasolicitacaocredito, 
+		f0050situacaocredito
+	FROM 
+		APUMinasPneus.dbo.t0050 AS t0050
+	WHERE 
+		t0050.f0050situacaocredito IS NOT NULL
+		AND EXISTS (
+			SELECT 1 
+			FROM CursoGabrielSilva.dbo.Cliente AS c
+			WHERE c.IdCliente = t0050.f0050idclifor
+		)
+);
 
 
 ------------------- CLIENTE -------------------
@@ -36,7 +52,7 @@ DECLARE @NomeConjuge VARCHAR(300);
 
 -- Cursor para percorrer os dados da tabela externa
 DECLARE cursorDados CURSOR FOR
-SELECT top 10000 f0050idclifor, f0050nome, f0050nomepai, f0050nomemae, f0050dtanascimento, f0050conjugenome
+SELECT top 20000 f0050idclifor, f0050nome, f0050nomepai, f0050nomemae, f0050dtanascimento, f0050conjugenome
 FROM APUMinasPneus.dbo.t0050
 
 -- Abrir o cursor
