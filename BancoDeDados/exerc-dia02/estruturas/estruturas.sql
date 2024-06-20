@@ -12,6 +12,7 @@ CREATE TABLE Cliente (
 	IdCliente int NOT NULL,
 	IdFiliacao int NOT NULL,
 	Nome varchar(300) NOT NULL,
+	Sobrenome varchar(100) NOT NULL,
 	DataDeNascimento datetime NULL,
 	DataDeCadastro datetime NULL DEFAULT GETDATE(),
 	NomeConjuge varchar(300) NULL,
@@ -118,6 +119,7 @@ CREATE TABLE LogErros (
 CREATE PROCEDURE spInserirCliente
 	@IdCliente INT,
 	@NomeCliente VARCHAR(300),
+	@SobrenomeCliente VARCHAR(100),
     @NomePai VARCHAR(300),
     @NomeMae VARCHAR(300),
 	@DataDeNascimento DATETIME,
@@ -133,8 +135,8 @@ BEGIN
         SET @IdFiliacaoInserido = SCOPE_IDENTITY();
 
 		-- Inserindo Cliente
-		INSERT INTO Cliente (IdCliente, IdFiliacao, Nome, DataDeNascimento, NomeConjuge)
-		VALUES (@IdCliente, @IdFiliacaoInserido, @NomeCliente, @DataDeNascimento, @NomeConjuge);
+		INSERT INTO Cliente (IdCliente, IdFiliacao, Nome, Sobrenome, DataDeNascimento, NomeConjuge)
+		VALUES (@IdCliente, @IdFiliacaoInserido, @NomeCliente, @SobrenomeCliente, @DataDeNascimento, @NomeConjuge);
 
         COMMIT TRANSACTION;
     END TRY

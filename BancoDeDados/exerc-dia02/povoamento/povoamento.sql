@@ -24,6 +24,69 @@ INSERT INTO Bairro(IdBairro, Nome)
 	FROM  APUMinasPneus.dbo.t0149
 );
 
+
+
+
+------------------- CLIENTE -------------------
+DECLARE @IdCliente INT;
+DECLARE @NomeCliente VARCHAR(300);
+DECLARE @SobrenomeCliente VARCHAR(100);
+DECLARE @NomePai VARCHAR(300);
+DECLARE @NomeMae VARCHAR(300);
+DECLARE @DataDeNascimento DATETIME;
+DECLARE @NomeConjuge VARCHAR(300);
+
+-- Cursor para percorrer os dados da tabela externa
+DECLARE cursorDados CURSOR FOR
+(
+    SELECT top 20000
+        clientes.f0050idclifor,
+        SUBSTRING(clientes.f0050nome, 1, CHARINDEX(' ', clientes.f0050nome) - 1),
+        SUBSTRING(clientes.f0050nome, CHARINDEX(' ', clientes.f0050nome) + 1, LEN(clientes.f0050nome)),
+        clientes.f0050nomepai,
+        clientes.f0050nomemae,
+        clientes.f0050dtanascimento,
+        clientes.f0050conjugenome
+    from APUMinasPneus.dbo.t0050 clientes
+    where CHARINDEX(' ', clientes.f0050nome) > 0
+
+    union
+
+    SELECT top 20000
+        clientes.f0050idclifor,
+        clientes.f0050nome,
+        '',
+        clientes.f0050nomepai,
+        clientes.f0050nomemae,
+        clientes.f0050dtanascimento,
+        clientes.f0050conjugenome
+    from APUMinasPneus.dbo.t0050 clientes
+    where CHARINDEX(' ', clientes.f0050nome) = 0
+);
+
+-- Abrir o cursor
+OPEN cursorDados;
+
+-- Variáveis para armazenar os valores lidos do cursor
+FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+
+-- Loop para executar a stored procedure para cada linha
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    -- Executar a stored procedure com os valores lidos do cursor
+    EXEC spInserirCliente @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+
+    -- Próxima linha
+    FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+END
+
+-- Fechar o cursor
+CLOSE cursorDados;
+DEALLOCATE cursorDados;
+
+
+
+------------------- VALIDACAO CREDITO -------------------
 INSERT INTO ValidacaoDeCredito (IdCliente, Data, Status)
 (
 	SELECT 
@@ -41,42 +104,6 @@ INSERT INTO ValidacaoDeCredito (IdCliente, Data, Status)
 		)
 );
 
-
-------------------- CLIENTE -------------------
-DECLARE @IdCliente INT;
-DECLARE @NomeCliente VARCHAR(300);
-DECLARE @NomePai VARCHAR(300);
-DECLARE @NomeMae VARCHAR(300);
-DECLARE @DataDeNascimento DATETIME;
-DECLARE @NomeConjuge VARCHAR(300);
-
--- Cursor para percorrer os dados da tabela externa
-DECLARE cursorDados CURSOR FOR
-SELECT top 20000 f0050idclifor, f0050nome, f0050nomepai, f0050nomemae, f0050dtanascimento, f0050conjugenome
-FROM APUMinasPneus.dbo.t0050
-
--- Abrir o cursor
-OPEN cursorDados;
-
--- Variáveis para armazenar os valores lidos do cursor
-FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
-
--- Loop para executar a stored procedure para cada linha
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    -- Executar a stored procedure com os valores lidos do cursor
-    EXEC spInserirCliente @IdCliente, @NomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
-
-    -- Próxima linha
-    FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
-END
-
--- Fechar o cursor
-CLOSE cursorDados;
-DEALLOCATE cursorDados;
-
-
-
 ------------------- DEPENDENTE CLIENTE -------------------
 INSERT INTO DependenteCliente(IdDependeteCliente, IdCliente, NomeCompleto, DataDeNascimento)
 (
@@ -87,10 +114,10 @@ INSERT INTO DependenteCliente(IdDependeteCliente, IdCliente, NomeCompleto, DataD
 
 -- Criação de uma tabela temporária para armazenar os dados gerados
 CREATE TABLE #TempDependenteCliente (
-IdDependeteCliente INT,
-IdCliente INT,
-NomeCompleto VARCHAR(100),
-DataDeNascimento DATE
+    IdDependeteCliente INT,
+    IdCliente INT,
+    NomeCompleto VARCHAR(100),
+    DataDeNascimento DATE
 );
 
 -- Variáveis para controle do loop e geração dos dados
