@@ -1,3 +1,25 @@
+-- Funcão extrair números
+CREATE FUNCTION ExtrairNumeros(@input NVARCHAR(MAX))
+RETURNS NVARCHAR(MAX)
+AS
+BEGIN
+    DECLARE @resultado NVARCHAR(MAX) = '';
+    DECLARE @i INT = 1;
+    DECLARE @len INT = LEN(@input);
+    DECLARE @char NCHAR(1);
+    
+    WHILE @i <= @len
+    BEGIN
+        SET @char = SUBSTRING(@input, @i, 1);
+        IF @char LIKE '[0-9]'
+        BEGIN
+            SET @resultado = @resultado + @char;
+        END
+        SET @i = @i + 1;
+    END
+    
+    RETURN @resultado;
+END
 
 
 -- Criação de tabelas
@@ -116,27 +138,73 @@ CREATE TABLE LogErros (
 	CONSTRAINT PK_LogErros PRIMARY KEY(LogID)
 );
 
-CREATE PROCEDURE spInserirCliente
+CREATE PROCEDURE spInserirDadosDoCliente
 	@IdCliente INT,
 	@NomeCliente VARCHAR(300),
 	@SobrenomeCliente VARCHAR(100),
     @NomePai VARCHAR(300),
     @NomeMae VARCHAR(300),
 	@DataDeNascimento DATETIME,
-	@NomeConjuge VARCHAR(300)
+	@NomeConjuge VARCHAR(300),
+	@TelefoneResidencial VARCHAR(14),
+	@TelefoneComercial VARCHAR(14),
+	@TelefoneCelular VARCHAR(14),
+	@TelefoneFax VARCHAR(14),
+	@TelefoneOutro VARCHAR(14),
+	@TelefoneConjuge VARCHAR(14)
 AS
 BEGIN
     BEGIN TRANSACTION;
     BEGIN TRY
+		-- Inserindo Filiacao
         INSERT INTO Filiacao (NomePai, NomeMae)
         VALUES (@NomePai, @NomeMae);
 
         DECLARE @IdFiliacaoInserido INT;
         SET @IdFiliacaoInserido = SCOPE_IDENTITY();
 
+
 		-- Inserindo Cliente
 		INSERT INTO Cliente (IdCliente, IdFiliacao, Nome, Sobrenome, DataDeNascimento, NomeConjuge)
 		VALUES (@IdCliente, @IdFiliacaoInserido, @NomeCliente, @SobrenomeCliente, @DataDeNascimento, @NomeConjuge);
+
+
+		-- Inserindo Telefones
+		IF @TelefoneResidencial IS NOT NULL AND @TelefoneResidencial <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 1, @TelefoneResidencial);
+		END
+
+		IF @TelefoneComercial IS NOT NULL AND @TelefoneComercial <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 2, @TelefoneComercial);
+		END
+
+		IF @TelefoneCelular IS NOT NULL AND @TelefoneCelular <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 3, @TelefoneCelular);
+		END
+
+		IF @TelefoneFax IS NOT NULL AND @TelefoneFax <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 4, @TelefoneFax);
+		END
+
+		IF @TelefoneOutro IS NOT NULL AND @TelefoneOutro <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 5, @TelefoneOutro);
+		END
+
+		IF @TelefoneConjuge IS NOT NULL AND @TelefoneConjuge <> ''
+		BEGIN
+			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
+			VALUES (@IdCliente, 6, @TelefoneConjuge);
+		END
 
         COMMIT TRANSACTION;
     END TRY

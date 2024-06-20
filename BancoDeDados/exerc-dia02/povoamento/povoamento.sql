@@ -25,7 +25,13 @@ INSERT INTO Bairro(IdBairro, Nome)
 );
 
 
-
+INSERT INTO TipoTelefone(IDTipoTelefone, Nome)
+VALUES  (1, 'Residencial'), 
+        (2, 'Comercial'), 
+        (3, 'Celular'), 
+        (4, 'Fax'), 
+        (5, 'Outro'),
+        (6, 'Conjuge')
 
 ------------------- CLIENTE -------------------
 DECLARE @IdCliente INT;
@@ -35,6 +41,12 @@ DECLARE @NomePai VARCHAR(300);
 DECLARE @NomeMae VARCHAR(300);
 DECLARE @DataDeNascimento DATETIME;
 DECLARE @NomeConjuge VARCHAR(300);
+DECLARE @TelefoneResidencial VARCHAR(14);
+DECLARE @TelefoneComercial VARCHAR(14);
+DECLARE @TelefoneCelular VARCHAR(14);
+DECLARE @TelefoneFax VARCHAR(14);
+DECLARE @TelefoneOutro VARCHAR(14);
+DECLARE @TelefoneConjuge VARCHAR(14);
 
 -- Cursor para percorrer os dados da tabela externa
 DECLARE cursorDados CURSOR FOR
@@ -46,7 +58,13 @@ DECLARE cursorDados CURSOR FOR
         clientes.f0050nomepai,
         clientes.f0050nomemae,
         clientes.f0050dtanascimento,
-        clientes.f0050conjugenome
+        clientes.f0050conjugenome,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneresidencialconfirmado) AS TelefoneResidencial,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecom) AS TelefoneComercial,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecelular) AS TelefoneCelular,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonefax) AS TelefoneFax,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneoutro) AS TelefoneOutro,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge
     from APUMinasPneus.dbo.t0050 clientes
     where CHARINDEX(' ', clientes.f0050nome) > 0
 
@@ -59,7 +77,13 @@ DECLARE cursorDados CURSOR FOR
         clientes.f0050nomepai,
         clientes.f0050nomemae,
         clientes.f0050dtanascimento,
-        clientes.f0050conjugenome
+        clientes.f0050conjugenome,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneresidencialconfirmado) AS TelefoneResidencial,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecom) AS TelefoneComercial,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecelular) AS TelefoneCelular,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonefax) AS TelefoneFax,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneoutro) AS TelefoneOutro,
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge
     from APUMinasPneus.dbo.t0050 clientes
     where CHARINDEX(' ', clientes.f0050nome) = 0
 );
@@ -68,16 +92,19 @@ DECLARE cursorDados CURSOR FOR
 OPEN cursorDados;
 
 -- Variáveis para armazenar os valores lidos do cursor
-FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
 
 -- Loop para executar a stored procedure para cada linha
 WHILE @@FETCH_STATUS = 0
 BEGIN
     -- Executar a stored procedure com os valores lidos do cursor
-    EXEC spInserirCliente @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+    EXEC spInserirDadosDoCliente @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
 
     -- Próxima linha
-    FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge;
+    FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
 END
 
 -- Fechar o cursor

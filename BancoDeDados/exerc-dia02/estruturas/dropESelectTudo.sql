@@ -2,6 +2,7 @@
 
 select * from sys.tables;
 
+drop FUNCTION CursoGabrielSilva.dbo.ExtrairNumeros;
 
 drop TABLE EnderecoPorCliente ;
 
@@ -29,6 +30,6 @@ DROP TABLE Cliente;
 
 DROP TABLE Filiacao;
 
-DROP PROCEDURE spInserirCliente;
+DROP PROCEDURE spInserirDadosDoCliente;
 
 DROP TABLE LogErros;
