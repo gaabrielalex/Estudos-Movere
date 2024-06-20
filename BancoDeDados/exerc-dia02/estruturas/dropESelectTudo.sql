@@ -2,7 +2,7 @@
 
 select * from sys.tables;
 
-drop FUNCTION CursoGabrielSilva.dbo.ExtrairNumeros;
+drop FUNCTION dbo.ExtrairNumeros;
 
 drop TABLE EnderecoPorCliente ;
 

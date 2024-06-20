@@ -53,6 +53,26 @@ DECLARE @TelefoneCelular VARCHAR(14);
 DECLARE @TelefoneFax VARCHAR(14);
 DECLARE @TelefoneOutro VARCHAR(14);
 DECLARE @TelefoneConjuge VARCHAR(14);
+DECLARE @DescricaoEnderecoPrincipal VARCHAR(400);
+DECLARE @IdBairroEnderecoPrincipal INT;
+DECLARE @IdCidadeEnderecoPrincipal INT;
+DECLARE @CepEnderecoPrincipal varchar(12);
+DECLARE @DescricaoEnderecoCobranca VARCHAR(400);
+DECLARE @IdBairroEnderecoCobranca INT;
+DECLARE @IdCidadeEnderecoCobranca INT;
+DECLARE @CepEnderecoCobranca varchar(12);
+DECLARE @DescricaoEnderecoEntrega VARCHAR(400);
+DECLARE @IdBairroEnderecoEntrega INT;
+DECLARE @IdCidadeEnderecoEntrega INT;
+DECLARE @CepEnderecoEntrega varchar(12);
+DECLARE @DescricaoEnderecoComercial VARCHAR(400);
+DECLARE @IdBairroEnderecoComercial INT;
+DECLARE @IdCidadeEnderecoComercial INT;
+DECLARE @CepEnderecoComercial varchar(12);
+DECLARE @DescricaoEnderecoConjuge VARCHAR(400);
+DECLARE @IdBairroEnderecoConjuge INT;
+DECLARE @IdCidadeEnderecoConjuge INT;
+DECLARE @CepEnderecoConjuge varchar(12);
 
 -- Cursor para percorrer os dados da tabela externa
 DECLARE cursorDados CURSOR FOR
@@ -70,7 +90,28 @@ DECLARE cursorDados CURSOR FOR
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecelular) AS TelefoneCelular,
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonefax) AS TelefoneFax,
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneoutro) AS TelefoneOutro,
-        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge,
+        clientes.f0050endereco,
+        clientes.f0149idbairro,
+        clientes.f0048idcidade,
+        clientes.f0050cep,
+        clientes.f0050cobrancaendereco,
+        clientes.f0149idbairrocobranca,
+        clientes.f0048idcidadecobranca,
+        clientes.f0050cobrancacep,
+        clientes.f0050entregaendereco,
+        clientes.f0149idbairroentrega,
+        clientes.f0048idcidadeentrega,
+        clientes.f0050entregacep,
+        clientes.f0050enderecocomercial,
+        clientes.f0149idbairrocomercial,
+        clientes.f0048idcidadecomercial,
+        clientes.f0050cepcomercial,
+        clientes.f0050enderecocomercial,
+        clientes.f0149idbairrocomercialconjuge,
+        clientes.f0048idcidadecomercialconjuge,
+        clientes.f0050cepcomercialconjuge
+
     from APUMinasPneus.dbo.t0050 clientes
     where CHARINDEX(' ', clientes.f0050nome) > 0
 
@@ -89,7 +130,28 @@ DECLARE cursorDados CURSOR FOR
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecelular) AS TelefoneCelular,
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonefax) AS TelefoneFax,
         CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050foneoutro) AS TelefoneOutro,
-        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge
+        CursoGabrielSilva.dbo.ExtrairNumeros(clientes.f0050fonecomercialconjuge) AS TelefoneConjuge,
+        clientes.f0050endereco,
+        clientes.f0149idbairro,
+        clientes.f0048idcidade,
+        clientes.f0050cep,
+        clientes.f0050cobrancaendereco,
+        clientes.f0149idbairrocobranca,
+        clientes.f0048idcidadecobranca,
+        clientes.f0050cobrancacep,
+        clientes.f0050entregaendereco,
+        clientes.f0149idbairroentrega,
+        clientes.f0048idcidadeentrega,
+        clientes.f0050entregacep,
+        clientes.f0050enderecocomercial,
+        clientes.f0149idbairrocomercial,
+        clientes.f0048idcidadecomercial,
+        clientes.f0050cepcomercial,
+        clientes.f0050enderecocomercialconjuge,
+        clientes.f0149idbairrocomercialconjuge,
+        clientes.f0048idcidadecomercialconjuge,
+        clientes.f0050cepcomercialconjuge
+
     from APUMinasPneus.dbo.t0050 clientes
     where CHARINDEX(' ', clientes.f0050nome) = 0
 );
@@ -99,18 +161,33 @@ OPEN cursorDados;
 
 -- Variáveis para armazenar os valores lidos do cursor
 FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
-                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge,
+                                @DescricaoEnderecoPrincipal, @IdBairroEnderecoPrincipal, @IdCidadeEnderecoPrincipal, @CepEnderecoPrincipal,
+                                @DescricaoEnderecoCobranca, @IdBairroEnderecoCobranca, @IdCidadeEnderecoCobranca, @CepEnderecoCobranca,
+                                @DescricaoEnderecoEntrega, @IdBairroEnderecoEntrega, @IdCidadeEnderecoEntrega, @CepEnderecoEntrega,
+                                @DescricaoEnderecoComercial, @IdBairroEnderecoComercial, @IdCidadeEnderecoComercial, @CepEnderecoComercial,
+                                @DescricaoEnderecoConjuge, @IdBairroEnderecoConjuge, @IdCidadeEnderecoConjuge, @CepEnderecoConjuge;
 
 -- Loop para executar a stored procedure para cada linha
 WHILE @@FETCH_STATUS = 0
 BEGIN
     -- Executar a stored procedure com os valores lidos do cursor
     EXEC spInserirDadosDoCliente @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
-                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge,
+                                @DescricaoEnderecoPrincipal, @IdBairroEnderecoPrincipal, @IdCidadeEnderecoPrincipal, @CepEnderecoPrincipal,
+                                @DescricaoEnderecoCobranca, @IdBairroEnderecoCobranca, @IdCidadeEnderecoCobranca, @CepEnderecoCobranca,
+                                @DescricaoEnderecoEntrega, @IdBairroEnderecoEntrega, @IdCidadeEnderecoEntrega, @CepEnderecoEntrega,
+                                @DescricaoEnderecoComercial, @IdBairroEnderecoComercial, @IdCidadeEnderecoComercial, @CepEnderecoComercial,
+                                @DescricaoEnderecoConjuge, @IdBairroEnderecoConjuge, @IdCidadeEnderecoConjuge, @CepEnderecoConjuge;
 
     -- Próxima linha
     FETCH NEXT FROM cursorDados INTO @IdCliente, @NomeCliente, @SobrenomeCliente, @NomePai, @NomeMae, @DataDeNascimento, @NomeConjuge, 
-                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge;
+                                @TelefoneResidencial, @TelefoneComercial, @TelefoneCelular, @TelefoneFax, @TelefoneOutro, @TelefoneConjuge,
+                                @DescricaoEnderecoPrincipal, @IdBairroEnderecoPrincipal, @IdCidadeEnderecoPrincipal, @CepEnderecoPrincipal,
+                                @DescricaoEnderecoCobranca, @IdBairroEnderecoCobranca, @IdCidadeEnderecoCobranca, @CepEnderecoCobranca,
+                                @DescricaoEnderecoEntrega, @IdBairroEnderecoEntrega, @IdCidadeEnderecoEntrega, @CepEnderecoEntrega,
+                                @DescricaoEnderecoComercial, @IdBairroEnderecoComercial, @IdCidadeEnderecoComercial, @CepEnderecoComercial,
+                                @DescricaoEnderecoConjuge, @IdBairroEnderecoConjuge, @IdCidadeEnderecoConjuge, @CepEnderecoConjuge;
 END
 
 -- Fechar o cursor

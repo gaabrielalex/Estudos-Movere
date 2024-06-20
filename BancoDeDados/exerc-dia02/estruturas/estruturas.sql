@@ -21,6 +21,7 @@ BEGIN
     RETURN @resultado;
 END
 
+GO
 
 -- Criação de tabelas
 CREATE TABLE Filiacao (
@@ -104,7 +105,7 @@ CREATE TABLE Bairro (
 );
 
 CREATE TABLE Endereco (
-	IdEndereco int NOT NULL,
+	IdEndereco int IDENTITY(1,1) NOT NULL,
 	IdBairro int NOT NULL,
 	IdCidade int NOT NULL,
 	Descricao varchar(400) NOT NULL,
@@ -130,6 +131,7 @@ CREATE TABLE EnderecoPorCliente (
 	CONSTRAINT FK_EnderecoPorCliente_TipoEndereco FOREIGN KEY(IdTipoEndereco) REFERENCES TipoEndereco (IdTipoEndereco)
 );
 
+GO
 -- Criação Estrutura Procedure Inserir Clientes
 CREATE TABLE LogErros (
     LogID INT IDENTITY(1,1),
@@ -137,6 +139,8 @@ CREATE TABLE LogErros (
     DataErro DATETIME NULL DEFAULT GETDATE(),
 	CONSTRAINT PK_LogErros PRIMARY KEY(LogID)
 );
+
+GO
 
 CREATE PROCEDURE spInserirDadosDoCliente
 	@IdCliente INT,
@@ -151,11 +155,32 @@ CREATE PROCEDURE spInserirDadosDoCliente
 	@TelefoneCelular VARCHAR(14),
 	@TelefoneFax VARCHAR(14),
 	@TelefoneOutro VARCHAR(14),
-	@TelefoneConjuge VARCHAR(14)
+	@TelefoneConjuge VARCHAR(14),
+	@DescricaoEnderecoPrincipal VARCHAR(400),
+	@IdBairroEnderecoPrincipal INT,
+	@IdCidadeEnderecoPrincipal INT,
+	@CepEnderecoPrincipal varchar(12),
+	@DescricaoEnderecoCobranca VARCHAR(400),
+	@IdBairroEnderecoCobranca INT,
+	@IdCidadeEnderecoCobranca INT,
+	@CepEnderecoCobranca varchar(12),
+	@DescricaoEnderecoEntrega VARCHAR(400),
+	@IdBairroEnderecoEntrega INT,
+	@IdCidadeEnderecoEntrega INT,
+	@CepEnderecoEntrega varchar(12),
+	@DescricaoEnderecoComercial VARCHAR(400),
+	@IdBairroEnderecoComercial INT,
+	@IdCidadeEnderecoComercial INT,
+	@CepEnderecoComercial varchar(12),
+	@DescricaoEnderecoConjuge VARCHAR(400),
+	@IdBairroEnderecoConjuge INT,
+	@IdCidadeEnderecoConjuge INT,
+	@CepEnderecoConjuge varchar(12)
 AS
 BEGIN
     BEGIN TRANSACTION;
     BEGIN TRY
+						
 		-- Inserindo Filiacao
         INSERT INTO Filiacao (NomePai, NomeMae)
         VALUES (@NomePai, @NomeMae);
@@ -170,40 +195,122 @@ BEGIN
 
 
 		-- Inserindo Telefones
-		IF @TelefoneResidencial IS NOT NULL AND @TelefoneResidencial <> ''
+		IF (@TelefoneResidencial IS NOT NULL) AND (@TelefoneResidencial <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 1, @TelefoneResidencial);
 		END
 
-		IF @TelefoneComercial IS NOT NULL AND @TelefoneComercial <> ''
+		IF (@TelefoneComercial IS NOT NULL) AND (@TelefoneComercial <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 2, @TelefoneComercial);
 		END
 
-		IF @TelefoneCelular IS NOT NULL AND @TelefoneCelular <> ''
+		IF (@TelefoneCelular IS NOT NULL) AND (@TelefoneCelular <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 3, @TelefoneCelular);
 		END
 
-		IF @TelefoneFax IS NOT NULL AND @TelefoneFax <> ''
+		IF (@TelefoneFax IS NOT NULL) AND (@TelefoneFax <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 4, @TelefoneFax);
 		END
 
-		IF @TelefoneOutro IS NOT NULL AND @TelefoneOutro <> ''
+		IF (@TelefoneOutro IS NOT NULL) AND (@TelefoneOutro <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 5, @TelefoneOutro);
 		END
 
-		IF @TelefoneConjuge IS NOT NULL AND @TelefoneConjuge <> ''
+		IF (@TelefoneConjuge IS NOT NULL) AND (@TelefoneConjuge <> '')
 		BEGIN
 			INSERT INTO Telefone (IdCliente, IdTipoTelefone, Numero)
 			VALUES (@IdCliente, 6, @TelefoneConjuge);
+		END
+
+
+		-- Inserindo Endereços
+		IF ((@DescricaoEnderecoPrincipal IS NOT NULL) AND (@DescricaoEnderecoPrincipal <> '')) AND
+		   (@IdBairroEnderecoPrincipal IS NOT NULL) AND
+		   (@IdCidadeEnderecoPrincipal IS NOT NULL) AND
+		   ((@CepEnderecoPrincipal IS NOT NULL) AND (@CepEnderecoPrincipal <> ''))
+		BEGIN
+			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
+			VALUES (@IdBairroEnderecoPrincipal, @IdCidadeEnderecoPrincipal, @DescricaoEnderecoPrincipal, @CepEnderecoPrincipal);
+
+			DECLARE @IdEnderecoPrincipalInserido INT;
+			SET @IdEnderecoPrincipalInserido = SCOPE_IDENTITY();
+
+			-- Inserindo Endereço Principal do Cliente
+			INSERT INTO EnderecoPorCliente (IdCliente, IdEndereco, IdTipoEndereco)
+			VALUES (@IdCliente, @IdEnderecoPrincipalInserido, 1);
+		END
+
+		IF ((@DescricaoEnderecoCobranca IS NOT NULL) AND (@DescricaoEnderecoCobranca <> '')) AND
+		   (@IdBairroEnderecoCobranca IS NOT NULL) AND
+		   (@IdCidadeEnderecoCobranca IS NOT NULL) AND
+		   ((@CepEnderecoCobranca IS NOT NULL) AND (@CepEnderecoCobranca <> ''))
+		BEGIN
+			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
+			VALUES (@IdBairroEnderecoCobranca, @IdCidadeEnderecoCobranca, @DescricaoEnderecoCobranca, @CepEnderecoCobranca);
+
+			DECLARE @IdEnderecoCobrancaInserido INT;
+			SET @IdEnderecoCobrancaInserido = SCOPE_IDENTITY();
+
+			-- Inserindo Endereço de Cobrança do Cliente
+			INSERT INTO EnderecoPorCliente (IdCliente, IdEndereco, IdTipoEndereco)
+			VALUES (@IdCliente, @IdEnderecoCobrancaInserido, 2);
+		END
+
+		IF ((@DescricaoEnderecoEntrega IS NOT NULL) AND (@DescricaoEnderecoEntrega <> '')) AND
+		   (@IdBairroEnderecoEntrega IS NOT NULL) AND
+		   (@IdCidadeEnderecoEntrega IS NOT NULL) AND
+		   ((@CepEnderecoEntrega IS NOT NULL) AND (@CepEnderecoEntrega <> ''))
+		BEGIN
+			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
+			VALUES (@IdBairroEnderecoEntrega, @IdCidadeEnderecoEntrega, @DescricaoEnderecoEntrega, @CepEnderecoEntrega);
+
+			DECLARE @IdEnderecoEntregaInserido INT;
+			SET @IdEnderecoEntregaInserido = SCOPE_IDENTITY();
+
+			-- Inserindo Endereço de Entrega do Cliente
+			INSERT INTO EnderecoPorCliente (IdCliente, IdEndereco, IdTipoEndereco)
+			VALUES (@IdCliente, @IdEnderecoEntregaInserido, 3);
+		END
+
+		IF ((@DescricaoEnderecoComercial IS NOT NULL) AND (@DescricaoEnderecoComercial <> '')) AND
+		   (@IdBairroEnderecoComercial IS NOT NULL) AND
+		   (@IdCidadeEnderecoComercial IS NOT NULL) AND
+		   ((@CepEnderecoComercial IS NOT NULL) AND (@CepEnderecoComercial <> ''))
+		BEGIN
+			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
+			VALUES (@IdBairroEnderecoComercial, @IdCidadeEnderecoComercial, @DescricaoEnderecoComercial, @CepEnderecoComercial);
+
+			DECLARE @IdEnderecoComercialInserido INT;
+			SET @IdEnderecoComercialInserido = SCOPE_IDENTITY();
+
+			-- Inserindo Endereço Comercial do Cliente
+			INSERT INTO EnderecoPorCliente (IdCliente, IdEndereco, IdTipoEndereco)
+			VALUES (@IdCliente, @IdEnderecoComercialInserido, 4);
+		END
+
+		IF ((@DescricaoEnderecoConjuge IS NOT NULL) AND (@DescricaoEnderecoConjuge <> '')) AND
+		   (@IdBairroEnderecoConjuge IS NOT NULL) AND
+		   (@IdCidadeEnderecoConjuge IS NOT NULL) AND
+		   ((@CepEnderecoConjuge IS NOT NULL) AND (@CepEnderecoConjuge <> ''))
+		BEGIN
+			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
+			VALUES (@IdBairroEnderecoConjuge, @IdCidadeEnderecoConjuge, @DescricaoEnderecoConjuge, @CepEnderecoConjuge);
+
+			DECLARE @IdEnderecoConjugeInserido INT;
+			SET @IdEnderecoConjugeInserido = SCOPE_IDENTITY();
+
+			-- Inserindo Endereço do Cônjuge do Cliente
+			INSERT INTO EnderecoPorCliente (IdCliente, IdEndereco, IdTipoEndereco)
+			VALUES (@IdCliente, @IdEnderecoConjugeInserido, 5);
 		END
 
         COMMIT TRANSACTION;
