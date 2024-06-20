@@ -24,6 +24,12 @@ INSERT INTO Bairro(IdBairro, Nome)
 	FROM  APUMinasPneus.dbo.t0149
 );
 
+INSERT INTO TipoEndereco(IDTipoEndereco, Nome)
+VALUES  (1, 'Principal'), 
+        (2, 'Cobrança'), 
+        (3, 'Entrega'), 
+        (4, 'Comercial'),
+        (5, 'Conjuge')
 
 INSERT INTO TipoTelefone(IDTipoTelefone, Nome)
 VALUES  (1, 'Residencial'), 
