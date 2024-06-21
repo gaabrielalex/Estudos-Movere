@@ -77,7 +77,7 @@ DECLARE @CepEnderecoConjuge varchar(12);
 -- Cursor para percorrer os dados da tabela externa
 DECLARE cursorDados CURSOR FOR
 (
-    SELECT top 20000
+    SELECT
         clientes.f0050idclifor,
         SUBSTRING(clientes.f0050nome, 1, CHARINDEX(' ', clientes.f0050nome) - 1),
         SUBSTRING(clientes.f0050nome, CHARINDEX(' ', clientes.f0050nome) + 1, LEN(clientes.f0050nome)),
@@ -117,7 +117,7 @@ DECLARE cursorDados CURSOR FOR
 
     union
 
-    SELECT top 20000
+    SELECT
         clientes.f0050idclifor,
         clientes.f0050nome,
         '',

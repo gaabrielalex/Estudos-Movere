@@ -109,7 +109,7 @@ CREATE TABLE Endereco (
 	IdBairro int NOT NULL,
 	IdCidade int NOT NULL,
 	Descricao varchar(400) NOT NULL,
-	Cep varchar(12) NOT NULL,
+	Cep varchar(12) NULL,
 	CONSTRAINT PK_Endereco PRIMARY KEY(IdEndereco),
 	CONSTRAINT FK_Endereco_Bairro FOREIGN KEY(IdBairro) REFERENCES Bairro (IdBairro),
 	CONSTRAINT FK_Endereco_Cidade FOREIGN KEY(IdCidade) REFERENCES Cidade (IdCidade)
@@ -235,8 +235,7 @@ BEGIN
 		-- Inserindo Endereços
 		IF ((@DescricaoEnderecoPrincipal IS NOT NULL) AND (@DescricaoEnderecoPrincipal <> '')) AND
 		   (@IdBairroEnderecoPrincipal IS NOT NULL) AND
-		   (@IdCidadeEnderecoPrincipal IS NOT NULL) AND
-		   ((@CepEnderecoPrincipal IS NOT NULL) AND (@CepEnderecoPrincipal <> ''))
+		   (@IdCidadeEnderecoPrincipal IS NOT NULL)
 		BEGIN
 			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
 			VALUES (@IdBairroEnderecoPrincipal, @IdCidadeEnderecoPrincipal, @DescricaoEnderecoPrincipal, @CepEnderecoPrincipal);
@@ -251,8 +250,7 @@ BEGIN
 
 		IF ((@DescricaoEnderecoCobranca IS NOT NULL) AND (@DescricaoEnderecoCobranca <> '')) AND
 		   (@IdBairroEnderecoCobranca IS NOT NULL) AND
-		   (@IdCidadeEnderecoCobranca IS NOT NULL) AND
-		   ((@CepEnderecoCobranca IS NOT NULL) AND (@CepEnderecoCobranca <> ''))
+		   (@IdCidadeEnderecoCobranca IS NOT NULL)
 		BEGIN
 			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
 			VALUES (@IdBairroEnderecoCobranca, @IdCidadeEnderecoCobranca, @DescricaoEnderecoCobranca, @CepEnderecoCobranca);
@@ -267,8 +265,7 @@ BEGIN
 
 		IF ((@DescricaoEnderecoEntrega IS NOT NULL) AND (@DescricaoEnderecoEntrega <> '')) AND
 		   (@IdBairroEnderecoEntrega IS NOT NULL) AND
-		   (@IdCidadeEnderecoEntrega IS NOT NULL) AND
-		   ((@CepEnderecoEntrega IS NOT NULL) AND (@CepEnderecoEntrega <> ''))
+		   (@IdCidadeEnderecoEntrega IS NOT NULL)
 		BEGIN
 			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
 			VALUES (@IdBairroEnderecoEntrega, @IdCidadeEnderecoEntrega, @DescricaoEnderecoEntrega, @CepEnderecoEntrega);
@@ -283,8 +280,7 @@ BEGIN
 
 		IF ((@DescricaoEnderecoComercial IS NOT NULL) AND (@DescricaoEnderecoComercial <> '')) AND
 		   (@IdBairroEnderecoComercial IS NOT NULL) AND
-		   (@IdCidadeEnderecoComercial IS NOT NULL) AND
-		   ((@CepEnderecoComercial IS NOT NULL) AND (@CepEnderecoComercial <> ''))
+		   (@IdCidadeEnderecoComercial IS NOT NULL)
 		BEGIN
 			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
 			VALUES (@IdBairroEnderecoComercial, @IdCidadeEnderecoComercial, @DescricaoEnderecoComercial, @CepEnderecoComercial);
@@ -299,8 +295,7 @@ BEGIN
 
 		IF ((@DescricaoEnderecoConjuge IS NOT NULL) AND (@DescricaoEnderecoConjuge <> '')) AND
 		   (@IdBairroEnderecoConjuge IS NOT NULL) AND
-		   (@IdCidadeEnderecoConjuge IS NOT NULL) AND
-		   ((@CepEnderecoConjuge IS NOT NULL) AND (@CepEnderecoConjuge <> ''))
+		   (@IdCidadeEnderecoConjuge IS NOT NULL)
 		BEGIN
 			INSERT INTO Endereco (IdBairro, IdCidade, Descricao, Cep)
 			VALUES (@IdBairroEnderecoConjuge, @IdCidadeEnderecoConjuge, @DescricaoEnderecoConjuge, @CepEnderecoConjuge);
