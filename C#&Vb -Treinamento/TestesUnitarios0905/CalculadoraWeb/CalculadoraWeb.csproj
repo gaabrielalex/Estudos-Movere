@@ -107,6 +107,7 @@
     <Content Include="CalculadoraFibo.ascx" />
     <Content Include="CalculadoraJurosComposto.ascx" />
     <Content Include="CalculadoraSimulacaoFinanciamento.ascx" />
+    <Content Include="Clientes.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -201,6 +202,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BancoDeDados.cs" />
     <Compile Include="CalculadoraCompleta.aspx.cs">
       <DependentUpon>CalculadoraCompleta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,6 +230,13 @@
     </Compile>
     <Compile Include="CalculadoraSimulacaoFinanciamento.ascx.designer.cs">
       <DependentUpon>CalculadoraSimulacaoFinanciamento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

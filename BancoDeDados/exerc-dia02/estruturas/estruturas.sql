@@ -345,3 +345,35 @@ BEGIN
         );
     END CATCH;
 END;
+
+go
+
+--Views
+create or alter view vwCliente
+as
+	select DISTINCT
+		CONCAT(cl.Nome, cl.Sobrenome) AS Nome,
+		C.Nome as Cidade,
+		cl.DataDeNascimento as 'Data de nascimento',
+		cl.DataDeCadastro as 'Data de cadastro'
+	from Cliente cl
+		inner join EnderecoPorCliente ec on
+			ec.IdCliente = cl.IdCliente
+		inner join Endereco e on
+			e.IdEndereco = ec.IdEndereco
+		inner join Cidade c on
+			c.IdCidade = e.IdCidade
+go
+
+
+CREATE TABLE Cliente (
+	IdCliente int NOT NULL,
+	IdFiliacao int NOT NULL,
+	Nome varchar(300) NOT NULL,
+	Sobrenome varchar(100) NOT NULL,
+	DataDeNascimento datetime NULL,
+	DataDeCadastro datetime NULL DEFAULT GETDATE(),
+	NomeConjuge varchar(300) NULL,
+	CONSTRAINT PK_Cliente PRIMARY KEY(IdCliente),
+	CONSTRAINT FK_Cliente_Filiacao FOREIGN KEY(IdFiliacao) REFERENCES Filiacao (IdFiliacao)
+);

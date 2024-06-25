@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\calculadoraweb\\calculadoracompleta.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\calculadoracompleta.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|c:\\users\\gabrielsilva\\desktop\\estudos-movere\\c#\u0026vb -treinamento\\testesunitarios0905\\calculadoraweb\\clientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\clientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|c:\\users\\gabrielsilva\\desktop\\estudos-movere\\c#\u0026vb -treinamento\\testesunitarios0905\\calculadoraweb\\calculadoracompleta.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\calculadoracompleta.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\calculadoraweb\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\calculadoraweb\\scripts\\meus-scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\scripts\\meus-scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\calculadoraweb\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CA12768-2022-48AA-95A7-E5E28BA887A5}|CalculadoraWeb\\CalculadoraWeb.csproj|solutionrelative:calculadoraweb\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CalculadoraCompleta.aspx",
-              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\CalculadoraCompleta.aspx",
-              "RelativeDocumentMoniker": "CalculadoraWeb\\CalculadoraCompleta.aspx",
-              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\CalculadoraCompleta.aspx",
-              "RelativeToolTip": "CalculadoraWeb\\CalculadoraCompleta.aspx",
+              "DocumentIndex": 1,
+              "Title": "Clientes.aspx",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Clientes.aspx",
+              "RelativeDocumentMoniker": "CalculadoraWeb\\Clientes.aspx",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Clientes.aspx",
+              "RelativeToolTip": "CalculadoraWeb\\Clientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-31T13:31:48.163Z",
+              "WhenOpened": "2024-06-25T14:15:51.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CalculadoraCompleta.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\CalculadoraCompleta.aspx.cs",
-              "RelativeDocumentMoniker": "CalculadoraWeb\\CalculadoraCompleta.aspx.cs",
-              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\CalculadoraCompleta.aspx.cs",
-              "RelativeToolTip": "CalculadoraWeb\\CalculadoraCompleta.aspx.cs",
-              "ViewState": "AQIAAIkAAAAAAAAAAAAswA8AAAAfAAAA",
+              "DocumentIndex": 0,
+              "Title": "Clientes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Clientes.aspx.cs",
+              "RelativeDocumentMoniker": "CalculadoraWeb\\Clientes.aspx.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Clientes.aspx.cs*",
+              "RelativeToolTip": "CalculadoraWeb\\Clientes.aspx.cs*",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCMAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:23:41.131Z",
+              "WhenOpened": "2024-06-25T14:18:02.42Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "meus-scripts.js",
-              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Scripts\\meus-scripts.js",
-              "RelativeDocumentMoniker": "CalculadoraWeb\\Scripts\\meus-scripts.js",
-              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\Scripts\\meus-scripts.js",
-              "RelativeToolTip": "CalculadoraWeb\\Scripts\\meus-scripts.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-04T15:22:54.069Z",
+              "Title": "BancoDeDados.cs",
+              "DocumentMoniker": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\BancoDeDados.cs",
+              "RelativeDocumentMoniker": "CalculadoraWeb\\BancoDeDados.cs",
+              "ToolTip": "C:\\Users\\GabrielSilva\\Desktop\\Estudos-Movere\\C#\u0026Vb -Treinamento\\TestesUnitarios0905\\CalculadoraWeb\\BancoDeDados.cs",
+              "RelativeToolTip": "CalculadoraWeb\\BancoDeDados.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAuwEkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T15:48:54.877Z",
               "EditorCaption": ""
             }
           ]
